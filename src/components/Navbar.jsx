@@ -10,22 +10,22 @@ export default function Navbar() {
     {
       heading: 'Technical SEO Architecture',
       subheading: 'Strategic sitemaps & structured data',
-      link: '/services/technical-seo'
+      link: '/services'
     },
     {
       heading: 'AI Content Creation',
       subheading: 'Scalable content production',
-      link: '/services/ai-content'
+      link: '/services'
     },
     {
       heading: 'Answer Engine Optimization',
       subheading: 'Win direct answer placements',
-      link: '/services/aeo'
+      link: '/services'
     },
     {
       heading: 'Generative Engine Optimization',
       subheading: 'AI engine citation strategy',
-      link: '/services/geo'
+      link: '/services'
     }
   ];
 
