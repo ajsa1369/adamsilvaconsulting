@@ -226,20 +226,20 @@ export default function Footer() {
         <div className="flex flex-col space-y-3 mb-8 text-gray-800">
           <a
             href="mailto:info@adamsilvaconsulting.com"
-            className="flex items-center gap-3 text-sm hover:text-blue-400 transition-colors"
+            className="flex items-center gap-3 text-sm hover:text-[#085DA0] transition-colors"
           >
-            <Mail size={18} color="blue" />
+            <Mail size={18} color="#085DA0" />
             <span>info@adamsilvaconsulting.com</span>
           </a>
           <a
             href="tel:954-818-9248"
-            className="flex items-center gap-3 text-sm hover:text-blue-400 transition-colors"
+            className="flex items-center gap-3 text-sm hover:text-[#085DA0] transition-colors"
           >
-            <Phone size={18} color="blue" />
+            <Phone size={18} color="#085DA0" />
             <span>954-818-9248</span>
           </a>
           <div className="flex items-center gap-3 text-sm">
-            <MapPin size={18} color="blue" />
+            <MapPin size={18} color="#085DA0" />
             <span>Virtual Consulting Worldwide</span>
           </div>
         </div>
@@ -290,10 +290,10 @@ export default function Footer() {
         </div>
 
         {/* Fourth Section - Newsletter */}
-        <div className="bg-blue-300 rounded-lg p-8 mb-8">
+        <div className="bg-[#E6F3FF] rounded-lg p-8 mb-8">
           <div className="max-w-2xl mx-auto">
             <div className="flex justify-center mb-4">
-              <MessageSquare size={48} className="text-gray-900" />
+              <MessageSquare size={48} className="text-[#085DA0]" />
             </div>
             <h3 className="text-2xl font-bold text-gray-900 text-center mb-2">
               Stay Updated
@@ -353,7 +353,7 @@ export default function Footer() {
               </label>
               <button
                 onClick={handleSubmit}
-                className="w-full bg-gray-900 text-white py-3 rounded font-semibold hover:bg-gray-800 transition-colors"
+                className="w-full cursor-pointer bg-[#085DA0] text-white py-3 rounded font-semibold hover:-translate-y-1 transition-colors"
               >
                 Subscribe
               </button>
@@ -365,11 +365,11 @@ export default function Footer() {
 
         {/* Fifth Section - Copyright and Links */}
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm">
-          <p className="text-gray-400">
+          <p className="text-gray-600">
             © {new Date().getFullYear()} Adam Silva Consulting. All rights
             reserved.
           </p>
-          <div className="flex gap-6">
+          <div className="flex text-gray-600 gap-6">
             <Link
               href="/privacy"
               className="hover:text-blue-400 transition-colors"

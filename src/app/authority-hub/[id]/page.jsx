@@ -24,6 +24,7 @@ const Page = () => {
 
     // 2. Find the matching pillar data object
     const matchingPillar = pillars.find(pillar => pillar.id === currentId);
+    console.log(matchingPillar.id)
 
     // 3. Update state with the Hero data if found
     if (matchingPillar) {

@@ -83,7 +83,7 @@ const ServiceEcosystem = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
             Interactive Service{' '}
-            <span className="text-blue-800">Ecosystem</span>
+            <span className="text-[#085DA0]">Ecosystem</span>
           </h2>
           <p className="text-lg md:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
             Discover how our AI-powered services work together as an integrated strategic flywheel. 
@@ -95,8 +95,8 @@ const ServiceEcosystem = () => {
         <div className="relative w-full max-w-5xl mx-auto" style={{ minHeight: '800px' }}>
           {/* Center Circle */}
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-            <div className="w-48 h-48 bg-blue-600 rounded-full flex items-center justify-center shadow-2xl">
-              <span className="text-white font-black text-xl text-center leading-tight">
+            <div className="w-35 h-35 bg-[#085DA0] rounded-full flex items-center justify-center shadow-2xl shadow-blue">
+              <span className="text-white font-bold text-lg text-center leading-tight">
                 AI<br />Authority<br />Flywheel
               </span>
             </div>

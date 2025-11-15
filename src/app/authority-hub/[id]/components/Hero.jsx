@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { ArrowLeft, Zap, BarChart3, Users, DollarSign } from 'lucide-react';
+import React from 'react';
+import { ArrowLeft } from 'lucide-react';
 
 // Mocked Link component for standalone React environment
 const MockLink = ({ href, children, className }) => (
   <a
-    href="#"
+    href={href}
     onClick={(e) => {
       e.preventDefault();
       console.log(`Navigating to ${href}`);
@@ -17,7 +17,7 @@ const MockLink = ({ href, children, className }) => (
 
 // --- Component Definition ---
 
-const Hero = ({ heroData }) => {
+const  Hero = ({ heroData }) => {
   const { heading, subheading, description, stats, linearGradient } = heroData;
     const words = heading.split(' ');
   const lastWord = words.pop();
@@ -88,52 +88,5 @@ const Hero = ({ heroData }) => {
   );
 };
 
-// --- Data and Main App Component for Demo ---
+export default Hero;
 
-export const pillars = [
-  {
-    id: 'ai-engine-optimization-mastery',
-    Hero: {
-      heading: 'AI Engine Optimization Mastery',
-      subheading: 'The Complete 2025 Guide to AEO, GEO, and Beyond',
-      description:
-        "Master AI Engine Optimization with comprehensive strategies for Answer Engine Optimization (AEO), Generative Engine Optimization (GEO), technical implementation, and future-proof methodologies that position your brand as the AI's trusted source.",
-      // Fixed: The class uses 'from-blue-500 via-purple-500 to-purple-700'
-      linearGradient: 'from-blue-700 via-indigo-700 to-purple-900',
-      stats: [
-        {
-          value: '82.7%',
-          label1: 'ChatGPT Market Share',
-          label2: 'Leading AI search platform',
-        },
-        {
-          value: '400M+',
-          label1: 'Weekly Users',
-          label2: 'People using ChatGPT weekly',
-        },
-        {
-          value: '65%',
-          label1: 'Zero-Click Searches',
-          label2: 'Searches resulting in no clicks',
-        },
-        {
-          value: '$80B',
-          label1: 'Voice Commerce Growth',
-          label2: 'Projected annual value by 2026',
-        },
-      ],
-    },
-  },
-];
-
-// Main App component to render the Hero with data
-const App = () => {
-  const heroData = pillars[0].Hero;
-  return (
-    <div className="font-sans antialiased">
-      <Hero heroData={heroData} />
-    </div>
-  );
-};
-
-export default App;

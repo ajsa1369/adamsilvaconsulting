@@ -1,3 +1,4 @@
+import CTA from '@/components/CTA';
 import About from './Home/sections/About';
 import Challenges from './Home/sections/Challenges';
 import CoreServicesCTA from './Home/sections/CoreServices';
@@ -12,6 +13,7 @@ export default function HomePage() {
       <ServiceEcosystem/>
       <Challenges/>
       <CoreServicesCTA/>
+      <CTA/>
     </main>
   );
 }

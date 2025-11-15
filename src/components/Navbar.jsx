@@ -109,8 +109,8 @@ export default function Navbar() {
           {/* Get Started Button */}
           <div className="shrink-0">
             <Link
-              href="/get-started"
-              className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors font-medium"
+              href="/contact"
+              className="bg-[#085DA0] text-white px-6 py-2 rounded-md hover:-translate-y-1 transition-colors font-medium"
             >
               Get Started
             </Link>

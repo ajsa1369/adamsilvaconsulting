@@ -1,7 +1,6 @@
 import React from 'react';
 
 const TableOfContent = ({ content, color }) => {
-  const lightColor = `bg-${color}-100`;
   const borderColor = `border-${color}-600`;
   const indexBgColor = `bg-${color}-200`;
   const indexTextColor = `text-${color}-700`;

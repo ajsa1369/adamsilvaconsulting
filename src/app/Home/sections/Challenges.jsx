@@ -38,7 +38,7 @@ const Challenges = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl  font-bold text-black mb-6">
             Solving Critical{' '}
-            <span className="text-blue-800">Business Challenges</span>
+            <span className="text-[#085DA0]">Business Challenges</span>
           </h2>
           <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
             Our integrated AI strategy directly addresses the most pressing pain points facing modern marketing leaders in 2025.
@@ -55,7 +55,7 @@ const Challenges = () => {
                 className="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
               >
                 {/* Icon */}
-                <div className="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-6">
+                <div className="w-16 h-16 bg-[#085DA0] rounded-lg flex items-center justify-center mb-6">
                   <Icon className="w-8 h-8 text-white" />
                 </div>
 
