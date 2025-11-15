@@ -24,7 +24,7 @@ const CTA = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/authority-assessment"
+              href="/contact"
               className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-blue-900 hover:bg-blue-950 text-white font-semibold text-lg rounded-lg shadow-lg hover:shadow-blue-900/30 transition-all duration-300"
             >
               <span>Start Your Authority Assessment</span>

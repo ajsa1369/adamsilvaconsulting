@@ -133,6 +133,7 @@ const ServiceEcosystem = () => {
                 style={{
                   left: `${x}%`,
                   top: `${y}%`,
+                  zIndex: isHovered ? 50 : 1,
                 }}
                 onMouseEnter={() => setHoveredCard(index)}
                 onMouseLeave={() => setHoveredCard(null)}
@@ -144,7 +145,7 @@ const ServiceEcosystem = () => {
                   style={{
                     background: isHovered
                       ? categoryColors[service.category]
-                      : 'linear-gradient(to bottom, white, #374151)',
+                      : 'linear-gradient(135deg, white 0%, white 60%, #d1d5db 100%)',
                   }}
                 >
                   {/* Category Tag */}

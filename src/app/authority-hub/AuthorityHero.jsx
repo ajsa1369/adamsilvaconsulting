@@ -49,7 +49,7 @@ const AuthorityHero = () => {
           The Authority Intelligence Hub
         </h1>
 
-        <h2 className="text-2xl mt-2 text-gray-800">
+        <h2 className="text-2xl mt-2 text-white">
           The Definitive Resource for AI Engine Citation Mastery
         </h2>
 

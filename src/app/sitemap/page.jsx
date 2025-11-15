@@ -50,9 +50,9 @@ const Sitemap = () => {
       title: 'Authority & Content',
       links: [
         { name: 'Authority Hub', url: '/authority-hub' },
-        { name: 'Industry Insights', url: '/industry-insights' },
+        { name: 'Industry Insights', url: '/insights' },
         { name: 'Case Studies', url: '/case-studies' },
-        { name: 'Research Hub', url: '/research-hub' },
+        { name: 'Research Hub', url: '/research' },
       ],
     },
     {

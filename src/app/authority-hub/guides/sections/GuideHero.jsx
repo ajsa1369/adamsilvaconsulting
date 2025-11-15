@@ -7,11 +7,11 @@ import Link from 'next/link';
 export const GuideHero = () => {
   const ctaPrimary = {
     label: 'Preview Report',
-    link: '/report/preview',
+    link: '/',
   };
   const ctaSecondary = {
     label: 'Request Custom Implementation',
-    link: '/contact/request',
+    link: '/contact',
   };
 
   return (

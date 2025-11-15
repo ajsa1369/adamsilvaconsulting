@@ -8,6 +8,7 @@ import {
   ArrowRight,
   Brain,
 } from 'lucide-react';
+import Link from 'next/link';
 
 const StrategicFramework = () => {
   const phases = [
@@ -44,7 +45,7 @@ const StrategicFramework = () => {
       description:
         'Step-by-step implementation guides for AEO, GEO, and topical authority building',
       buttonText: 'Browse Implementation Guides',
-      link: '#',
+      link: '/authority-hub/guides',
     },
     {
       Icon: BarChart4,
@@ -52,7 +53,7 @@ const StrategicFramework = () => {
       description:
         'Real-world authority building implementations with quantified business outcomes',
       buttonText: 'View Authority Success Stories',
-      link: '#',
+      link: '/case-studies',
     },
     {
       Icon: Brain,
@@ -60,7 +61,7 @@ const StrategicFramework = () => {
       description:
         'Proprietary research on AI engine behavior and authority building effectiveness',
       buttonText: 'Access Research Reports',
-      link: '#',
+      link: '/research',
     },
   ];
 
@@ -121,12 +122,12 @@ const StrategicFramework = () => {
               <p className="text-sm text-neutral-600 flex-grow mb-6">
                 {resource.description}
               </p>
-              <a
+              <Link
                 href={resource.link}
                 className="flex items-center text-blue-600 font-semibold hover:text-blue-700 transition duration-150 mt-auto"
               >
                 {resource.buttonText} <ArrowRight className="w-4 h-4 ml-2" />
-              </a>
+              </Link>
             </div>
           ))}
         </div>

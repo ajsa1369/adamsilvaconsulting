@@ -66,7 +66,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <Link
-              href="/start-building"
+              href="/contact"
               className="inline-flex items-center gap-3 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg hover:shadow-blue-600/30 transition-all duration-300"
             >
               <span>Start Building Authority</span>
