@@ -6,7 +6,7 @@ const AboutHero = () => {
   return (
     // Section with fixed background image and dark overlay for text contrast
     <section
-      className="w-full min-h-[60vh] md:min-h-screen flex items-center justify-center flex-col gap-6 p-6 py-20 md:py-32 text-center relative overflow-hidden"
+      className="w-full min-h-[80vh]  flex items-center justify-center flex-col gap-6 p-6  text-center relative overflow-hidden"
       style={{
         // Dark gradient overlay for text readability, layered over the background image
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('${bgImageUrl}')`,
@@ -18,7 +18,7 @@ const AboutHero = () => {
     >
       <div className="z-10 max-w-7xl mx-auto rounded-xl p-4 sm:p-6">
         {/* Responsive Heading */}
-        <h1 className="text-white font-extrabold text-4xl sm:text-5xl lg:text-6xl leading-tight mb-4 drop-shadow-lg">
+        <h1 className="text-white font-bold text-4xl sm:text-5xl lg:text-6xl leading-tight mb-4 drop-shadow-lg">
           <span>About</span>
           {" "}
           {/* Gradient Text Span */}
@@ -33,7 +33,7 @@ const AboutHero = () => {
         </h2>
 
         {/* Responsive Paragraph */}
-        <p className="text-gray-300 text-base sm:text-lg max-w-4xl mx-auto leading-relaxed opacity-90 rounded-lg backdrop-blur-sm bg-white/10 p-4">
+        <p className="text-gray-300 text-base sm:text-lg max-w-4xl mx-auto leading-relaxed opacity-90 rounded-lg  p-4">
           In the age of generative AI, the strategic objective has irrevocably shifted from ranking for keywords to being cited for authority. Adam Silva Consulting leads this transformation, helping businesses become the authoritative sources that AI engines trust and recommend.
         </p>
       </div>

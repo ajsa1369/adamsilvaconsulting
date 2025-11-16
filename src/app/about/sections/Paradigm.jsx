@@ -28,7 +28,7 @@ const Paradigm = () => {
     <section className="bg-gray-50 py-16  flex items-center justify-center flex-col">
       {/* Introduction */}
       <div className="flex flex-col items-center justify-center gap-6 max-w-4xl text-center">
-        <h3 className="text-center font-extrabold text-3xl md:text-4xl text-gray-800">
+        <h3 className="text-center font-bold text-3xl md:text-4xl text-gray-800">
           Navigating the New Advertising Paradigm
         </h3>
         <p className="text-neutral-600 text-lg md:text-xl leading-relaxed">
@@ -46,12 +46,12 @@ const Paradigm = () => {
         {/* Left Container: The Paradigm Shift & Strategic Pillars */}
         <div className="flex flex-col w-full md:w-3/5 lg:w-[50%] p-2 sm:p-0">
           <div className="space-y-6">
-            <h4 className="text-neutral-700 text-3xl md:text-4xl font-extrabold">
+            <h4 className="text-neutral-700 text-3xl font-bold">
               The Paradigm Shift
             </h4>
             <p className="text-lg text-neutral-500">
               Gartner projects that organic search traffic will decline by as
-              much as **50%** as users turn to AI chatbots and virtual assistants
+              much as 50% as users turn to AI chatbots and virtual assistants
               for information. This creates an urgent need for a new strategic
               approach.
             </p>
@@ -59,21 +59,21 @@ const Paradigm = () => {
               Adam Silva Consulting addresses this challenge with an integrated
               ecosystem designed to build and project brand authority. Our
               approach begins with AI-powered content creation and extends to
-              the strategic pillars of **Answer Engine Optimization (AEO)**,
-              **Generative Engine Optimization (GEO)**, and foundational **Topical
-              Authority** development.
+              the strategic pillars of Answer Engine Optimization (AEO),
+              Generative Engine Optimization (GEO), and foundational Topical
+              Authority development.
             </p>
           </div>
 
           {/* Key Strategic Insight Box */}
-          <div className="flex flex-col items-start justify-start mt-8 p-6 rounded-2xl border-2 border-indigo-200 bg-indigo-50/70 shadow-lg">
+          <div className="flex flex-col items-start justify-start mt-8 p-6 rounded-2xl  shadow-lg">
             <div className="flex items-center justify-center gap-4 mb-2">
-              <Brain className="w-6 h-6 text-indigo-700 flex-shrink-0" />
-              <h5 className="text-xl font-bold text-indigo-700">
+              <Brain className="w-6 h-6 text-[#106EBE] flex-shrink-0" />
+              <h5 className="text-xl font-bold text-neutral-700">
                 Key Strategic Insight
               </h5>
             </div>
-            <p className="text-lg italic text-neutral-600 border-l-4 border-indigo-400 pl-4 py-1">
+            <p className="text-lg italic text-neutral-600   py-1">
               "The strategic objective for digital visibility has irrevocably
               shifted from ranking for keywords to being cited for authority.
               Achieving success demands a holistic strategy that seamlessly
@@ -87,28 +87,28 @@ const Paradigm = () => {
             {[
               {
                 Icon: Target,
-                title: 'Solve, Don\'t Just Sell',
-                description: 'Content structured around key business pain points: Resource Crunch, Visibility Crisis, Data Dilemma, and Engagement Gap. We solve problems, not just promote services.',
+                title: 'Authority Over Traffic',
+                description: 'Building demonstrable expertise that AI engines recognize and cite as authoritative sources',
               },
               {
                 Icon: Rocket,
-                title: 'Build The Flywheel',
-                description: 'Architecture supports continuous feedback loops where performance data informs content creation, creating compound growth in authority and visibility.',
+                title: 'Defensible Competitive Moats',
+                description: "Creating sophisticated content architecture that's difficult for competitors to replicate",
               },
               {
                 Icon: TrendingUp,
-                title: 'Trust is Ultimate Asset',
-                description: 'Verifiable data and CSR initiatives provide auditable proof of trustworthiness, the most valuable signal in AI evaluation frameworks.',
+                title: 'Compound Authority Growth',
+                description: 'Systematic approach to building topical authority that creates long-term data assets',
               },
             ].map(({ Icon, title, description }) => (
               <div key={title} className="flex items-start gap-6">
                 {/* Icon Container with fixed BG styling */}
-                <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-blue-400 rounded-lg shadow-xl">
-                  <Icon className="w-6 h-6 text-white" />
+                <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-[#CCE7FF] rounded-lg shadow-xl">
+                  <Icon className="w-6 h-6 text-[#106EBE]" />
                 </div>
                 {/* Text Content */}
                 <div>
-                  <h5 className="text-xl font-bold text-neutral-700 mt-0">
+                  <h5 className="text-2xl font-semibold text-neutral-700 mt-0">
                     {title}
                   </h5>
                   <p className="text-lg text-neutral-500 mt-1">
@@ -122,8 +122,8 @@ const Paradigm = () => {
 
         {/* Right Container: Market Reality Stats with Gradient BG */}
         <div
-          className="w-full md:w-2/5 lg:w-[50%] p-6 md:p-8 rounded-xl shadow-2xl flex flex-col gap-6"
-          style={{ backgroundImage: 'linear-gradient(to bottom right, #93c5fd, #ffffff)' }} // Blue-300 to White gradient
+          className="w-full md:w-2/5 lg:w-[50%] p-6 md:p-8 rounded-xl  flex flex-col gap-6"
+          style={{ backgroundImage: 'linear-gradient(to bottom right, #E8F4FF, #ffffff)' }} // Blue-300 to White gradient
         >
           <h5 className="text-2xl text-neutral-800 font-bold mb-4">The Market Reality</h5>
 
@@ -144,7 +144,7 @@ const Paradigm = () => {
               <h6 className="text-md text-neutral-700 font-semibold">
                 Businesses Seeing Traffic Drops
               </h6>
-              <h6 className="font-bold text-2xl text-amber-600">40%</h6> {/* Using 40% for visual */}
+              <h6 className="font-bold text-2xl text-amber-600">25-40%</h6> {/* Using 40% for visual */}
             </div>
             <ProgressBar percentage={40} colorClass="bg-amber-600" label="40% businesses seeing drops" />
           </div>
@@ -161,7 +161,7 @@ const Paradigm = () => {
           </div>
 
           {/* Call to Action Box */}
-          <div className="mt-4 p-3 bg-blue-600 rounded-xl shadow-xl flex items-center justify-center">
+          <div className="mt-4 p-3 bg-[#106EBE] rounded-xl shadow-xl flex items-center justify-center">
             <h6 className="text-xl text-white font-bold text-center">
               The time for transformation is now, not later.
             </h6>

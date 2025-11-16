@@ -31,7 +31,7 @@ const Recommendation = () => {
   return (
     <section className="flex flex-col items-center justify-center mt-20 px-4 sm:px-6 lg:px-8">
       <div className="flex items-center justify-center gap-4 flex-col max-w-5xl">
-        <h5 className="text-3xl md:text-4xl font-extrabold text-neutral-800 text-center">
+        <h5 className="text-3xl md:text-4xl font-bold text-neutral-800 text-center">
           Strategic Recommendations for Leadership
         </h5>
         <p className="text-lg md:text-xl text-neutral-700 max-w-4xl text-center leading-relaxed">
@@ -43,10 +43,10 @@ const Recommendation = () => {
         {recommendations.map(({ Icon, title, p1, p2 }, index) => (
           <div
             key={index}
-            className="w-full md:w-[45%]  bg-white h-[300px] justify-center rounded-lg shadow-md p-6 flex flex-col items-start"
+            className="w-full md:w-[45%]  bg-white h-[250px] justify-start rounded-lg shadow-md p-6 flex flex-col items-start"
           >
             <div className="flex items-center justify-center gap-5">
-              <Icon className="w-8 h-8 text-blue-600 mb-4" />
+              <Icon className="w-8 h-8 text-[#0F6CBB] mb-4" />
               <h6 className="text-xl font-semibold text-neutral-800 mb-3">
                 {title}
               </h6>
@@ -57,7 +57,7 @@ const Recommendation = () => {
           </div>
         ))}
       </div>
-       <div className="mt-16 w-full max-w-7xl mx-auto rounded-2xl bg-blue-500 p-10 flex flex-col items-center justify-center gap-10 shadow-2xl">
+       <div className="mt-16 w-full max-w-7xl mx-auto rounded-2xl bg-[#0F6CBB] p-10 flex flex-col items-center justify-center gap-10 shadow-2xl">
         <h5 className="text-3xl  font-extrabold text-white text-center">
          The Transformation Timeline
         </h5>

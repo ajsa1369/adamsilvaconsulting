@@ -74,7 +74,7 @@ const Methodology = () => {
     <section className="mt-20 px-4 sm:px-6 lg:px-8 py-10 bg-white">
       {/* Header Section */}
       <div className="flex items-center justify-center gap-4 flex-col">
-        <h5 className="text-3xl md:text-5xl font-extrabold text-neutral-800 text-center">
+        <h5 className="text-3xl md:text-4xl font-bold text-neutral-800 text-center">
           The Adam Silva Methodology
         </h5>
         <p className="text-lg text-neutral-600 max-w-4xl text-center leading-relaxed">
@@ -89,8 +89,8 @@ const Methodology = () => {
       </div>
 
       {/* Integrated Service Ecosystem Section */}
-      <div className="mt-12 flex flex-col gap-10 bg-gray-50 border border-neutral-200 py-10 px-4 sm:px-8 shadow-xl rounded-2xl max-w-7xl mx-auto">
-        <h5 className="font-extrabold text-3xl text-neutral-800 text-center">
+      <div className="mt-12 flex flex-col gap-5 bg-gray-50 border border-neutral-200 py-10 px-4 sm:px-8 shadow-xl rounded-2xl max-w-7xl mx-auto">
+        <h5 className="font-bold text-3xl text-neutral-800 text-center">
           The Integrated Service Ecosystem
         </h5>
         <p className="text-lg max-w-4xl mx-auto text-center text-neutral-600">
@@ -99,7 +99,7 @@ const Methodology = () => {
         </p>
 
         {/* Ecosystem Grid - Responsive Flex Wrap */}
-        <div className="mt-4 flex flex-wrap gap-8 justify-center">
+        <div className="mt-2   flex flex-wrap gap-8 justify-center">
           {ecosystemServices.map(({ Icon, title, description }, index) => (
             <div
               key={index}
@@ -107,10 +107,10 @@ const Methodology = () => {
             >
               <div className="flex items-start justify-start gap-4 mb-3">
                 {/* Icon with BG-BLUE-600 */}
-                <div className="w-10 h-10 flex items-center justify-center bg-blue-600 rounded-full flex-shrink-0">
-                  <Icon className="w-5 h-5 text-white" />
+                <div className="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-md flex-shrink-0">
+                  <Icon className="w-5 h-5 text-[#106EBE]" />
                 </div>
-                <h6 className="font-extrabold text-xl text-neutral-800 mt-1">
+                <h6 className="font-bold text-xl text-neutral-800 mt-1">
                   {title}
                 </h6>
               </div>
@@ -132,8 +132,8 @@ const Methodology = () => {
             className="flex flex-col gap-4 items-center w-full md:w-[48%] lg:w-[30%] p-6 border border-neutral-200 shadow-xl rounded-2xl bg-white transition hover:shadow-2xl text-center"
           >
             {/* Icon with BG-BLUE-600 */}
-            <div className="w-16 h-16 flex items-center justify-center bg-blue-600 rounded-full shadow-lg mb-2">
-              <Icon className="w-8 h-8 text-white" />
+            <div className="w-16 h-16 flex items-center justify-center bg-blue-100 rounded-md  mb-2">
+              <Icon className="w-8 h-8 text-[#106EBE]" />
             </div>
 
             <h6 className="font-bold text-xl text-neutral-800">

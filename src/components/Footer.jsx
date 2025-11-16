@@ -80,36 +80,36 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2 text-zinc-600">
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/services/ai-lead-generation"
                   className="text-md hover:text-blue-400 transition-colors"
                 >
                   AI Lead Generation
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/services/voice-agent-verification"
                   className="text-md hover:text-blue-400 transition-colors"
                 >
                   Voice Agent Verification
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/services/omnichannel-nurturing"
                   className="text-md hover:text-blue-400 transition-colors"
                 >
                   Omnichannel Nurturing
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/services/precision-lead-management"
                   className="text-md hover:text-blue-400 transition-colors"
                 >
                   Precision Lead Management
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -121,36 +121,36 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2 text-zinc-600">
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/services/seo-ppc-superpowers"
                   className="text-md hover:text-blue-400 transition-colors"
                 >
                   SEO & PPC Superpowers
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/services/content-media-creation"
                   className="text-md hover:text-blue-400 transition-colors"
                 >
                   Content & Media Creation
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/services/intellegent-cammpaigns"
                   className="text-md hover:text-blue-400 transition-colors"
                 >
                   Intelligent Campaigns
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/services/intent-graph-targeting"
                   className="text-md hover:text-blue-400 transition-colors"
                 >
                   Intent Graph Targeting
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -162,36 +162,36 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2 text-zinc-700">
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/services/ai-website-landing-pages"
                   className="text-md hover:text-blue-400 transition-colors"
                 >
                   AI Websites & Landing Pages
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/services/real-time-analytics"
                   className="text-md hover:text-blue-400 transition-colors"
                 >
                   Real-time Analytics
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/services/security-compliance"
                   className="text-md hover:text-blue-400 transition-colors"
                 >
                   Security & Compliance
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/services/competitor-marketing"
                   className="text-md hover:text-blue-400 transition-colors"
                 >
                   Competitor Monitoring
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -203,20 +203,20 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2 text-gray-700">
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/services/omnichannel-communication"
                   className="text-md hover:text-blue-400 transition-colors"
                 >
                   Omnichannel Communication
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/services/outreah-partnerships"
                   className="text-md hover:text-blue-400 transition-colors"
                 >
                   Outreach & Partnerships
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

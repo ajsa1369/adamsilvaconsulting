@@ -4,6 +4,7 @@ import Methodology from "./sections/Methodology";
 import PainPoints from "./sections/PainPoints";
 import Paradigm from "./sections/Paradigm";
 import Recommendation from "./sections/Recommendation";
+import AboutCTA from "./sections/AboutCTA";
 
 export default function AboutPage() {
   return (
@@ -13,7 +14,7 @@ export default function AboutPage() {
       <Methodology/>
       <PainPoints/>
       <Recommendation/>
-      <CTA/>
+      <AboutCTA/>
     </main>
   )
 }

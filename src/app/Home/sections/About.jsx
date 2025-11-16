@@ -36,7 +36,7 @@ const About = () => {
       <div className="max-w-7xl mx-auto">
         {/* Heading Section */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl  font-bold text-zinc-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 mb-6">
             Lead Generation Through{' '}
             <span className="text-[#085DA0]">AI Authority</span>
           </h2>
@@ -48,7 +48,7 @@ const About = () => {
         </div>
 
         {/* Two Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
           {/* Left Part - Key Points */}
           <div className="space-y-8">
             {keyPoints.map((point, index) => {
@@ -77,26 +77,26 @@ const About = () => {
           </div>
 
           {/* Right Part - Metrics */}
+          <div className="bg-white rounded-3xl p-8 shadow-lg w-full">
+            <h2 className="text-2xl font-bold text-gray-900 mb-8">
+              The New Success Metrics
+            </h2>
 
-          <div className="bg-gray-50 rounded-2xl shadow-xl  w-full">
-            <div className="bg-white rounded-3xl p-6   w-full">
-              <h2 className="text-2xl font-bold text-gray-900 mb-12">
-                The New Success Metrics
-              </h2>
+            <div className="space-y-6">
+              {metrics.map((metric, index) => (
+                <div
+                  key={index}
+                  className="flex items-center justify-between gap-4"
+                >
+                  {/* Label */}
+                  <span className="text-gray-600 font-normal text-base whitespace-nowrap">
+                    {metric.label}
+                  </span>
 
-              <div className="space-y-8">
-                {metrics.map((metric, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center justify-between gap-6"
-                  >
-                    {/* Label */}
-                    <span className="text-gray-600 font-normal text-lg whitespace-nowrap">
-                      {metric.label}
-                    </span>
-
+                  {/* Progress Bar and Value Container */}
+                  <div className="flex items-center gap-3 flex-1 max-w-xs">
                     {/* Progress Bar Container */}
-                    <div className="flex-1 bg-gray-200 rounded-full h-2 overflow-hidden">
+                    <div className="flex-1 ml-20 bg-gray-200 rounded-full h-1 overflow-hidden min-w-[120px]">
                       <div
                         className="bg-[#085DA0] h-full rounded-full transition-all duration-1000 ease-out"
                         style={{ width: `${metric.value}%` }}
@@ -104,12 +104,12 @@ const About = () => {
                     </div>
 
                     {/* Value */}
-                    <span className="text-[#085DA0] font-bold text-2xl whitespace-nowrap">
+                    <span className="text-[#085DA0] font-bold text-xl whitespace-nowrap">
                       {metric.value}%
                     </span>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
