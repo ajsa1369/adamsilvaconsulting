@@ -2,6 +2,7 @@ import React from 'react';
 
 const TableOfContent = ({ content, color }) => {
   const borderColor = `border-${color}-600`;
+  const bgColor=`bg-${color}-50`
   const indexBgColor = `bg-${color}-200`;
   const indexTextColor = `text-${color}-700`;
   const hoverBgColor = `hover:bg-${color}-100`;
@@ -23,7 +24,7 @@ const TableOfContent = ({ content, color }) => {
           >
             <span
               className={`
-                px-3 py-1  rounded-md text-sm font-semibold 
+                px-3 py-1  rounded-md text-sm font-semibold  
                 ${indexBgColor} ${indexTextColor}
               `}
             >

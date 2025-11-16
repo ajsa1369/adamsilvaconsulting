@@ -4,7 +4,7 @@ import Framework from './Framework'
 import Pillars from './Pillars'
 import StrategicIntellegence from './StrategicIntellegence'
 import StrategicFramework from './StrategicFramework'
-import CTA from '@/components/CTA'
+import AuthorityCTA from './AuthorityCTA'
 
 const page = () => {
   return (
@@ -14,7 +14,7 @@ const page = () => {
       <Pillars/>
       <StrategicIntellegence/>
       <StrategicFramework/>
-      <CTA/>
+      <AuthorityCTA/>
     </main>
   )
 }

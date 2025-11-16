@@ -2,23 +2,23 @@ import { Search, Target, Brain, Zap, CheckCircle } from 'lucide-react';
 import Image from 'next/image';
 import React from 'react';
 
-const CoreStrategies = ({ Strategies }) => {
+const CoreStrategies = ({ Strategies,color }) => {
    const { heading, description, strategies ,framework} = Strategies;
 
   // Icons for each strategy
   const strategyIcons = [
-    <Search key={1} className="w-8 h-8 text-blue-700" />,
-    <Target key={2} className="w-8 h-8 text-purple-700" />,
-    <Brain key={3} className="w-8 h-8 text-green-700" />,
-    <Zap key={4} className="w-8 h-8 text-yellow-700" />,
+    <Search key={1} className={`w-8 h-8 text-${color}-700`} />,
+    <Target key={2} className={`w-8 h-8 text-${color}-700`} />,
+    <Brain key={3} className={`w-8 h-8 text-${color}-700`} />,
+    <Zap key={4} className={`w-8 h-8 text-${color}-700`}/>,
   ];
 
   // Background colors for each icon wrapper
   const iconBg = [
-    'bg-blue-100',
-    'bg-purple-100',
-    'bg-green-100',
-    'bg-yellow-100',
+   `bg-${color}-100`,
+   `bg-${color}-100`,
+   `bg-${color}-100`,
+   `bg-${color}-100`,
   ];
 
   return (

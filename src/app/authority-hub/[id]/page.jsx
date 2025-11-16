@@ -1,4 +1,4 @@
-"use client"
+'use client';
 import { pillars } from '@/lib/AuthorityPillars';
 import Hero from './components/Hero';
 import React, { useEffect, useState } from 'react';
@@ -23,8 +23,8 @@ const Page = () => {
     const currentId = pathSegments[pathSegments.length - 1].split('?')[0]; // Extract ID
 
     // 2. Find the matching pillar data object
-    const matchingPillar = pillars.find(pillar => pillar.id === currentId);
-    console.log(matchingPillar.id)
+    const matchingPillar = pillars.find((pillar) => pillar.id === currentId);
+    console.log(matchingPillar.id);
 
     // 3. Update state with the Hero data if found
     if (matchingPillar) {
@@ -39,9 +39,8 @@ const Page = () => {
         setHeroData(null);
       }
     }
-    
+
     setIsLoading(false);
-    
   }, []); // Run once on client mount
 
   if (isLoading) {
@@ -54,13 +53,35 @@ const Page = () => {
 
   return (
     <main>
-      <Hero heroData={data.Hero}/>
-      <TableOfContent content={data.TableOfContent.content} color={data.TableOfContent.color}/>
-      <Introduction introduction={data.Introduction} color={data.TableOfContent.color}/>
-      <PillarComponent Pillars={data.Pillars}/>
-      <CoreStrategies Strategies={data.Strategies}/>
-      <Guidelines guideline={data.Guidelines} color={data.TableOfContent.color}/>
-      <AuthorityCta cta={data.CTA} color={data.TableOfContent.colro} linearGradient={data.Hero.linearGradient} />
+      <Hero heroData={data.Hero} color={data.TableOfContent.color} />
+      {data.TableOfContent.content && (
+        <TableOfContent
+          content={data.TableOfContent.content}
+          color={data.TableOfContent.color}
+        />
+      )}
+      {data.Introduction && (
+        <Introduction
+          introduction={data.Introduction}
+          color={data.TableOfContent.color}
+        />
+      )}
+      {data.Pillars && <PillarComponent Pillars={data.Pillars} />}
+  { data.Strategies  && <CoreStrategies
+        Strategies={data.Strategies}
+        color={data.TableOfContent.color}
+      />}
+      {data.Guidelines && (
+        <Guidelines
+          guideline={data.Guidelines}
+          color={data.TableOfContent.color}
+        />
+      )}
+      <AuthorityCta
+        cta={data.CTA}
+        color={data.TableOfContent.colro}
+        linearGradient={data.Hero.linearGradient}
+      />
     </main>
   );
 };

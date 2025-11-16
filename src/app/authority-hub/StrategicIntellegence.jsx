@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, BookOpen, Clock } from 'lucide-react';
+import Link from 'next/link';
 
 const StrategicIntellegence = () => {
   const strategies = [
@@ -81,7 +82,7 @@ const StrategicIntellegence = () => {
           >
             {/* Tagline and Impact Badge */}
             <div className="flex items-center justify-between mb-3">
-              <span className="text-sm font-semibold text-blue-600">
+              <span className="text-sm font-semibold text-[#025CA2]">
                 {item.tagline}
               </span>
               <span
@@ -92,7 +93,7 @@ const StrategicIntellegence = () => {
             </div>
 
             {/* Title and Description */}
-            <h3 className="text-xl font-bold text-neutral-800 mb-4 hover:text-blue-700 transition-colors">
+            <h3 className="text-xl font-bold text-neutral-800 mb-4 hover:text-[#025CA2] transition-colors">
               <a href={item.link}>{item.title}</a>
             </h3>
             <p className="text-neutral-600 mb-6 text-base">{item.description}</p>
@@ -101,17 +102,17 @@ const StrategicIntellegence = () => {
             <div className="mt-auto pt-4 border-t border-neutral-100 flex items-center justify-between">
               <div className="flex flex-col sm:flex-row sm:items-center gap-3 text-sm text-neutral-500">
                 <span className="flex items-center">
-                  <BookOpen className="w-4 h-4 mr-1 text-blue-500" />
+                  <BookOpen className="w-4 h-4 mr-1 text-[#025CA2]" />
                   {item.date}
                 </span>
                 <span className="flex items-center">
-                  <Clock className="w-4 h-4 mr-1 text-blue-500" />
+                  <Clock className="w-4 h-4 mr-1 text-[#025CA2]" />
                   {item.time}
                 </span>
               </div>
               <a
                 href={item.link}
-                className="flex items-center text-blue-600 font-semibold hover:text-blue-700 transition duration-150 py-2 px-3 rounded-lg bg-blue-50 hover:bg-blue-100"
+                className="flex items-center text-[#025CA2] font-semibold hover:text-blue-700 transition duration-150 py-2 px-3 rounded-lg bg-blue-50 hover:bg-blue-100"
               >
                 Read Strategic Analysis <ArrowRight className="w-4 h-4 ml-2" />
               </a>
@@ -122,9 +123,9 @@ const StrategicIntellegence = () => {
 
       {/* View All Button */}
       <div className="mt-12 text-center">
-        <button className="flex items-center mx-auto bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg shadow-xl transition duration-300 transform hover:scale-[1.02]">
+        <Link href="/insights" className="flex max-w-[300px] items-center mx-auto bg-[#025CA2] hover:-traslate-y-1 cursor-pointer text-white font-bold py-3 px-8 rounded-lg shadow-xl transition duration-300 transform hover:scale-[1.02]">
           View All Strategic Insights <ArrowRight className="w-5 h-5 ml-3" />
-        </button>
+        </Link>
       </div>
     </section>
   );

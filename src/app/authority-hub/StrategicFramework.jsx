@@ -88,7 +88,7 @@ const StrategicFramework = () => {
         {phases.map((phase, index) => (
           <div key={index} className="flex flex-col items-center justify-start h-full">
             <IconWrapper>
-              <phase.Icon className="w-8 h-8 text-blue-600" />
+              <phase.Icon className="w-8 h-8 text-[#025CA2]" />
             </IconWrapper>
             <h3 className="text-xl font-bold text-neutral-800 mt-6 mb-2">
               {phase.title}
@@ -113,7 +113,7 @@ const StrategicFramework = () => {
               className="flex flex-col items-center p-6 border border-neutral-100 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
               <IconWrapper>
-                <resource.Icon className="w-8 h-8 text-blue-600" />
+                <resource.Icon className="w-8 h-8 text-[#025CA2]" />
               </IconWrapper>
 
               <h3 className="text-xl font-bold text-neutral-800 mt-6 mb-3">
@@ -124,7 +124,7 @@ const StrategicFramework = () => {
               </p>
               <Link
                 href={resource.link}
-                className="flex items-center text-blue-600 font-semibold hover:text-blue-700 transition duration-150 mt-auto"
+                className="flex items-center text-[#025CA2] font-semibold hover:-translate-y-1 hover:text-blue-700 transition duration-150 mt-auto"
               >
                 {resource.buttonText} <ArrowRight className="w-4 h-4 ml-2" />
               </Link>

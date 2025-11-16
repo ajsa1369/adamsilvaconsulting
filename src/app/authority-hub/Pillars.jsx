@@ -103,7 +103,7 @@ const Pillars = () => {
   ];
 
   return (
-    <section className="mt-20 px-4 sm:px-6 lg:px-8">
+    <section className="mt-20 py-10 px-4 sm:px-6 lg:px-8">
       {/* Header Section */}
       <div className="flex flex-col items-center justify-center gap-5 mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-neutral-800 text-center">
@@ -125,10 +125,10 @@ const Pillars = () => {
             {/* Icon and Tagline */}
             <div className="flex items-start gap-4 mb-4">
               <div className="flex-shrink-0 p-3 bg-blue-100 rounded-xl">
-                <pillar.Icon className="w-8 h-8 text-blue-600" />
+                <pillar.Icon className="w-8 h-8 text-[#025CA2]" />
               </div>
               <div>
-                <span className="text-xs font-semibold uppercase tracking-wider text-blue-600">
+                <span className="text-xs font-semibold uppercase tracking-wider text-[#025CA2]">
                   {pillar.tagline}
                 </span>
                      <h3 className="text-xl font-bold text-neutral-700 mt-3">
@@ -163,7 +163,7 @@ const Pillars = () => {
               </span>
               <a
                 href={pillar.guideLink}
-                className="flex items-center text-blue-600 font-semibold hover:text-blue-700 transition duration-150"
+                className="flex items-center text-[#025CA2] font-semibold hover:text-blue-700 transition duration-150"
               >
                 Read Guide <ArrowRight className="w-4 h-4 ml-1" />
               </a>

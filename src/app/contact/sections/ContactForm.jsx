@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Clock, Send, Loader2 } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Send, Loader2, ArrowRight } from 'lucide-react';
 
 const serviceOptions = [
   'Select a service...',
@@ -77,7 +77,7 @@ const ContactForm = () => {
   return (
     <section className="flex flex-col lg:flex-row items-start justify-center p-4 sm:p-8 lg:p-12 gap-12 bg-gray-50">
       <div className="w-full lg:w-1/2 bg-white p-6 sm:p-10 rounded-xl shadow-md">
-        <h2 className="text-3xl font-extrabold text-neutral-800 mb-2">
+        <h2 className="text-3xl font-bold text-neutral-800 mb-2">
           Get Started Today
         </h2>
         <p className="text-md text-neutral-600 mb-8">
@@ -181,7 +181,7 @@ const ContactForm = () => {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-extrabold py-3 px-6 rounded-lg shadow-md transition duration-300 disabled:opacity-75 disabled:cursor-not-allowed"
+            className="w-full flex items-center justify-center bg-[#025CA2] hover:translate-y-1 text-white font-medium py-3 px-6 rounded-lg shadow-md hover:shadow-blue-500 transition cursor-pointer duration-300 disabled:opacity-75 disabled:cursor-not-allowed"
           >
             {isLoading ? (
               <>
@@ -190,7 +190,7 @@ const ContactForm = () => {
               </>
             ) : (
               <>
-                Send Message <Send className="ml-2 h-4 w-4" />
+                Send Message <ArrowRight className="ml-2 h-4 w-4" />
               </>
             )}
           </button>
@@ -198,67 +198,76 @@ const ContactForm = () => {
       </div>
 
       {/* Contact Info Sidebar */}
-      <div className="w-full lg:w-1/2 p-6 sm:p-10 ">
-        <h2 className="text-3xl font-extrabold text-neutral-800 mb-6 border-b pb-3">
-          Get In Touch
-        </h2>
-        <p className="text-md text-neutral-600 mb-8">
-          Ready to discuss your AI authority strategy? We're here to help you navigate the transformation from traditional SEO to AI-powered visibility.
-        </p>
+<div className="w-full lg:w-1/2 p-6 sm:p-10 ">
+  <h2 className="text-3xl font-bold text-neutral-800 mb-6 border-b pb-3">
+    Get In Touch
+  </h2>
+  <p className="text-md text-neutral-600 mb-8">
+    Ready to discuss your AI authority strategy? We're here to help you navigate the transformation from traditional SEO to AI-powered visibility.
+  </p>
 
-        <div className="space-y-6">
-          {/* Phone */}
-          <div className="flex items-start gap-4">
-            <Phone className="w-6 h-6 text-blue-600 mt-1 flex-shrink-0" />
-            <div>
-              <h3 className="text-xl font-semibold text-neutral-800">Phone</h3>
-              <p className="text-neutral-600">954-818-9248</p>
-              <p className="text-sm text-neutral-500">Monday - Friday, 9AM - 6PM EST</p>
-            </div>
-          </div>
-
-          {/* Email */}
-          <div className="flex items-start gap-4">
-            <Mail className="w-6 h-6 text-blue-600 mt-1 flex-shrink-0" />
-            <div>
-              <h3 className="text-xl font-semibold text-neutral-800">Email</h3>
-              <p className="text-neutral-600">info@adamsilvaconsulting.com</p>
-              <p className="text-sm text-neutral-500">We respond within 24 hours</p>
-            </div>
-          </div>
-
-          {/* Location */}
-          <div className="flex items-start gap-4">
-            <MapPin className="w-6 h-6 text-blue-600 mt-1 flex-shrink-0" />
-            <div>
-              <h3 className="text-xl font-semibold text-neutral-800">Location</h3>
-              <p className="text-neutral-600">Virtual Consulting Worldwide</p>
-              <p className="text-sm text-neutral-500">Serving clients nationwide</p>
-            </div>
-          </div>
-
-          {/* Response Time */}
-          <div className="flex items-start gap-4">
-            <Clock className="w-6 h-6 text-blue-600 mt-1 flex-shrink-0" />
-            <div>
-              <h3 className="text-xl font-semibold text-neutral-800">Response Time</h3>
-              <p className="text-neutral-600">24-hour initial response</p>
-              <p className="text-sm text-neutral-500">Comprehensive strategy within 48 hours</p>
-            </div>
-          </div>
-        </div>
-
-        {/* What to Expect */}
-        <div className="mt-8 pt-6 border bg-neutral-100 p-6 rounded-2xl border-gray-200">
-          <h3 className="text-xl font-semibold text-neutral-800 mb-4">What to Expect</h3>
-          <ul className="list-disc pl-5 space-y-2 text-neutral-600">
-            <li>Comprehensive authority assessment within 48 hours</li>
-            <li>Customized AI optimization strategy proposal</li>
-            <li>Clear roadmap with measurable milestones</li>
-            <li>Transparent pricing and timeline estimates</li>
-          </ul>
-        </div>
+  <div className="space-y-6">
+    {/* Phone */}
+    <div className="flex items-start gap-4">
+      <div className="p-2 rounded-md" style={{ background: "#CCE7FF" }}>
+        <Phone className="w-6 h-6" style={{ color: "#025CA2" }} />
       </div>
+      <div>
+        <h3 className="text-2xl font-semibold text-neutral-800">Phone</h3>
+        <p className="text-neutral-600">954-818-9248</p>
+        <p className="text-sm text-neutral-500">Monday - Friday, 9AM - 6PM EST</p>
+      </div>
+    </div>
+
+    {/* Email */}
+    <div className="flex items-start gap-4">
+      <div className="p-2 rounded-md" style={{ background: "#CCE7FF" }}>
+        <Mail className="w-6 h-6" style={{ color: "#025CA2" }} />
+      </div>
+      <div>
+        <h3 className="text-2xl font-semibold text-neutral-800">Email</h3>
+        <p className="text-neutral-600">info@adamsilvaconsulting.com</p>
+        <p className="text-sm text-neutral-500">We respond within 24 hours</p>
+      </div>
+    </div>
+
+    {/* Location */}
+    <div className="flex items-start gap-4">
+      <div className="p-2 rounded-md" style={{ background: "#CCE7FF" }}>
+        <MapPin className="w-6 h-6" style={{ color: "#025CA2" }} />
+      </div>
+      <div>
+        <h3 className="text-2xl font-semibold text-neutral-800">Location</h3>
+        <p className="text-neutral-600">Virtual Consulting Worldwide</p>
+        <p className="text-sm text-neutral-500">Serving clients nationwide</p>
+      </div>
+    </div>
+
+    {/* Response Time */}
+    <div className="flex items-start gap-4">
+      <div className="p-2 rounded-md" style={{ background: "#CCE7FF" }}>
+        <Clock className="w-6 h-6" style={{ color: "#025CA2" }} />
+      </div>
+      <div>
+        <h3 className="text-2xl font-semibold text-neutral-800">Response Time</h3>
+        <p className="text-neutral-600">24-hour initial response</p>
+        <p className="text-sm text-neutral-500">Comprehensive strategy within 48 hours</p>
+      </div>
+    </div>
+  </div>
+
+  {/* What to Expect */}
+  <div className="mt-8 pt-6 border bg-neutral-100 p-6 rounded-2xl border-gray-200">
+    <h3 className="text-xl font-semibold text-neutral-800 mb-4">What to Expect</h3>
+    <ul className="list-disc pl-5 space-y-2 text-neutral-600">
+      <li>Comprehensive authority assessment within 48 hours</li>
+      <li>Customized AI optimization strategy proposal</li>
+      <li>Clear roadmap with measurable milestones</li>
+      <li>Transparent pricing and timeline estimates</li>
+    </ul>
+  </div>
+</div>
+
     </section>
   );
 };

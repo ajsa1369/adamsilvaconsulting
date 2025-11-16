@@ -15,7 +15,7 @@ const AuthorityCta = ({ cta, color, linearGradient }) => {
         {cta.heading}
       </h5>
 
-      <h6 className="text-xl text-white text-center max-w-2xl">
+      <h6 className="text-xl text-white text-center max-w-4xl">
         {cta.subheading}
       </h6>
 
@@ -25,7 +25,7 @@ const AuthorityCta = ({ cta, color, linearGradient }) => {
         {/* First Button → Contact */}
         <Link href="/contact" className="w-full sm:w-auto">
           <button
-            className={`p-3 w-full sm:w-auto cursor-pointer ${buttonColor} border-2 text-lg ${borderColor} 
+            className={`p-3 w-full hover:-translate-y-1 sm:w-auto cursor-pointer ${buttonColor} border-2 text-lg ${borderColor} 
             font-semibold rounded-md bg-white flex items-center justify-center gap-3`}
           >
             {cta.cta}
@@ -36,7 +36,7 @@ const AuthorityCta = ({ cta, color, linearGradient }) => {
         {/* Second Button → Authority Hub */}
         <Link href="/authority-hub" className="w-full sm:w-auto">
           <button
-            className="p-3 w-full sm:w-auto cursor-pointer rounded-md border-white border-2 
+            className="p-3 w-full sm:w-auto hover:-translate-y-1 cursor-pointer rounded-md border-white border-2 
             text-white text-lg font-semibold flex items-center justify-center gap-3"
           >
             <span>Explore More Guides</span>

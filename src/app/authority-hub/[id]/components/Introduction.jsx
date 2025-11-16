@@ -1,61 +1,4 @@
-// import { CircleCheckBig } from 'lucide-react';
-// import Image from 'next/image';
-// import React from 'react';
 
-// const Introduction = ({ introduction, color }) => {
-//   const lightColor = `bg-${color}-100`;
-//   const borderColor = `border-${color}-600`;
-//   const headingColor = `text-${color}-800`;
-//   const textColor = `text-${color}-600`;
-//   const indexBgColor = `bg-${color}-200`;
-//   const indexTextColor = `text-${color}-700`;
-//   const BgColor = `bg-${color}-100`;
-//   return (
-//     <section className="mt-20 mx-auto max-w-4xl flex items-start justify-center flex-col gap-5">
-//       <h2 className="text-3xl md:text-4xl  font-bold text-neutral-800 ">
-//         {introduction.heading}
-//       </h2>
-//       <p className="text-neutral-700 text-lg ">{introduction.description}</p>
-//       <div className={`p-6 rounded-lg w-full border ${borderColor} ${BgColor}`}>
-//         <h4
-//           className={`text-black text-xl md:text-2xl font-bold ${headingColor}`}
-//         >
-//           {introduction.subheading}
-//         </h4>
-//         <p className={` mt-4 text-xl  ${textColor}`}>
-//           {introduction.description2}
-//         </p>
-//       </div>
-//       <div className="mt-10 flex justify-center items-center gap-5">
-//         <Image
-//           src={introduction.imageUrl}
-//           width={400}
-//           alt="image"
-//           height={400}
-//           className="w-1/2 rounded-md"
-//         />
-//         <div className="flex flex-col items-start justify-center gap-5">
-//           <h4 className="text-xl md:text-2xl font-bold ">
-//             {introduction.landscape.heading}
-//           </h4>
-//           <p className="text-lg text-neutral-700">
-//             {introduction.landscape.description}
-//           </p>
-//           <ul className='space-y-3 ml-4' >
-//             {introduction.landscape.points.map((point, index) => (
-//               <li key={index} className='flex gap-2 items-center justify-start'>
-//                 <CircleCheckBig color='green' className='w-5 h-5 text-green-400'/>
-//                 <span className='text-neutral-600 text-sm'>{point}</span>
-//               </li>
-//             ))}
-//           </ul>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default Introduction;
 
 import { CircleCheckBig } from 'lucide-react';
 import Image from 'next/image';
@@ -67,20 +10,20 @@ const Introduction = ({ introduction, color }) => {
   // Use bracket notation for dynamic Tailwind classes for safety and consistency
   // Note: For production Tailwind environments, these colors need to be safelisted.
   const lightColor = `bg-${color}-100`;
-  const borderColor = `border-${color}-600`;
+  const borderColor = `border-${color}-400`;
   const headingColor = `text-${color}-800`;
-  const textColor = `text-${color}-600`;
-  const BgColor = `bg-${color}-100`;
+  const textColor = `text-${color}-800`;
+  const BgColor = `bg-${color}-50`;
 
   return (
-    <section className="mt-20 mx-auto max-w-4xl flex items-start justify-center flex-col gap-5 p-4 sm:p-6">
+    <section id='introduction' className="mt-20 mx-auto max-w-4xl flex items-start justify-center flex-col gap-5 p-4 sm:p-6">
       <h2 className="text-3xl md:text-4xl font-bold text-neutral-800 ">
         {introduction.heading}
       </h2>
       <p className="text-neutral-700 text-lg ">{introduction.description}</p>
 
-      {/* Boxed Content */}
-      <div className={`p-6 rounded-lg w-full border ${borderColor} ${BgColor}`}>
+
+      <div className={`p-6 rounded-lg w-full  border ${borderColor}  ${BgColor}`}>
         <h4 className={`text-xl md:text-2xl font-bold ${headingColor}`}>
           {introduction.subheading}
         </h4>
