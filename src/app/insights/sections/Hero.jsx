@@ -3,7 +3,7 @@ import { MessageCircle } from 'lucide-react';
 
 export default function StrategicIntelligenceHero() {
   return (
-    <div className="relative min-h-screen bg-gradient-to-r from-emerald-400 via-cyan-500 to-blue-600 overflow-hidden">
+    <div className="relative min-h-[80vh] bg-gradient-to-r from-emerald-400 via-cyan-500 to-blue-600 overflow-hidden">
       {/* Main Content */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-20">
         {/* Heading */}

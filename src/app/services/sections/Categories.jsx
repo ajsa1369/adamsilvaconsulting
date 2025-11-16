@@ -40,8 +40,8 @@ const Categories = () => {
 
   return (
     <section className="mt-20 w-full flex items-center justify-center flex-col gap-10 px-4 sm:px-6 lg:px-8 py-10 bg-gray-50">
-      <h1 className="text-neutral-800 font-bold text-3xl md:text-5xl text-center">
-        Our Service Categories
+      <h1 className="text-neutral-800 font-bold text-3xl md:text-4xl text-center">
+        Strategic Service Categories
       </h1>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto w-full">
@@ -51,12 +51,12 @@ const Categories = () => {
             className="flex flex-col p-8 bg-white border border-neutral-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
           >
             {/* Icon container with gradient background effect */}
-            <div className="w-16 h-16 flex items-center justify-center bg-blue-100 rounded-lg mb-6 shadow-md"
+            <div className="w-16 h-16 flex items-center justify-center bg-blue-100 rounded-lg mb-6 "
               style={{
                 background: 'linear-gradient(135deg, #e0f2fe 0%, #bfdbfe 100%)' // Subtle light blue gradient
               }}
             >
-              <category.Icon className="w-8 h-8 text-blue-700" />
+              <category.Icon className="w-8 h-8 text-[#085DA0]" />
             </div>
 
             {/* Title and Description */}

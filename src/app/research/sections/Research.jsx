@@ -29,7 +29,7 @@ const ResearchCard = () => {
           {researchData.tags.map((tag, index) => (
             <span 
               key={index} 
-              className="text-xs font-bold px-2 py-1 rounded-full text-blue-700 bg-blue-100 uppercase tracking-wide"
+              className="text-xs font-bold px-2 py-1 rounded-full text-[#025CA1] bg-blue-100 uppercase tracking-wide"
             >
               {tag}
             </span>
@@ -60,7 +60,7 @@ const ResearchCard = () => {
 
         {/* Download Button */}
         <button
-          className="flex items-center px-6 py-3 rounded-xl bg-blue-600 text-white text-lg font-semibold hover:bg-blue-700 transition duration-150 shadow-md"
+          className="flex items-center px-6 py-3 rounded-xl bg-[#025CA1] text-white text-lg font-semibold hover:bg-[#025CA1] transition duration-150 shadow-md"
           onClick={() => console.log('Downloading Research:', researchData.title)}
         >
           Download Research
@@ -72,12 +72,12 @@ const ResearchCard = () => {
       <div className="flex flex-col items-center justify-center p-8 lg:p-10 lg:w-5/12 text-center bg-[#F4F9FF] border-t lg:border-t-0 bg-blue-100 lg:border-l border-blue-200">
         
         {/* Icon Container */}
-        <div className="p-5 mb-4 rounded-xl bg-blue-100 text-blue-600">
+        <div className="p-5 mb-4 rounded-xl bg-blue-100 text-[#025CA1]">
           <BarChart className="w-12 h-12" strokeWidth={1.5} />
         </div>
 
         {/* Metric Value */}
-        <p className="text-4xl sm:text-5xl font-extrabold text-blue-600 mb-2">
+        <p className="text-4xl sm:text-5xl font-extrabold text-[#025CA1] mb-2">
           {researchData.pages}
         </p>
 

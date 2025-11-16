@@ -8,7 +8,7 @@ const Challenge = ({challenge, solution}) => {
        <p className='text-lg text-neutral-600'>{challenge}</p>
      </div>
      <div className="p-8 rounded-2xl max-w-1/2 w-full shadow-xl bg-white flex flex-col items-start justify-center gap-5">
-        <h2 className='font-bold text-2xl text-blue-800'>Our Solution</h2>
+        <h2 className='font-bold text-2xl text-[#0F6CBB]'>Our Solution</h2>
         <p className='text-lg text-neutral-600'>{solution}</p>
      </div>
     </section>

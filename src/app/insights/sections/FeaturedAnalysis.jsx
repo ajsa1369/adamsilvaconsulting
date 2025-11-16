@@ -3,14 +3,14 @@ import { Tag, Calendar, Clock, ArrowRight, AlertTriangle } from 'lucide-react';
 
 export default function FeaturedAnalysis() {
   return (
-    <div className="bg-gradient-to-br rounded-xl border border-red-500 from-red-50 max-w-6xl mx-auto via-orange-50 to-pink-50 mt-20 p-4 sm:p-10">
+    <div className="bg-gradient-to-br overflow-hidden rounded-xl border border-red-500 from-red-50 max-w-6xl mx-auto via-orange-50 to-pink-50 mt-20">
       <div className="w-full mx-auto">
         
         {/* Main Flex Layout: Stacks vertically on mobile, 2/3 and 1/3 layout on desktop */}
         <div className="flex flex-col md:flex-row w-full gap-8 items-center md:items-stretch">
           
           {/* Left Content (2/3 Width) */}
-          <div className="w-full md:w-2/3 bg-white/70 backdrop-blur-md rounded-3xl p-6 sm:p-8 md:p-12 border border-white/60 shadow-2xl transition-all hover:shadow-red-300/50">
+          <div className="w-full md:w-1/2 bg-white/70 backdrop-blur-md rounded-3xl p-6 sm:p-8 md:p-12  transition-all hover:shadow-red-300/50">
             {/* Tag and Badge */}
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center gap-2 text-blue-700 text-sm font-semibold">
@@ -23,12 +23,12 @@ export default function FeaturedAnalysis() {
             </div>
 
             {/* Heading */}
-            <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6 leading-snug">
+            <h1 className="text-3xl  font-bold text-gray-900 mb-4 leading-snug">
               The AI Authority Imperative: Gartner's 50% Traffic Decline Prediction
             </h1>
 
             {/* Description */}
-            <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-8">
+            <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-4">
               Gartner's projection of 50% organic traffic decline marks the definitive end of click-based optimization. This comprehensive analysis explores why the strategic objective has irrevocably shifted from ranking for keywords to being cited for authority, and provides a systematic framework for businesses to navigate this transformation before it's too late.
             </p>
 
@@ -45,7 +45,7 @@ export default function FeaturedAnalysis() {
             </div>
 
             {/* CTA Button */}
-            <button className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-semibold transition-all flex items-center gap-2 group shadow-xl shadow-blue-500/30 hover:shadow-blue-500/50">
+            <button className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl   font-semibold transition-all flex items-center gap-2 group shadow-xl shadow-blue-500/30 hover:shadow-blue-500/50">
               Read Critical Analysis
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </button>

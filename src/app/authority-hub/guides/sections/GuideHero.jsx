@@ -39,7 +39,7 @@ export const GuideHero = () => {
       {/* CTA Buttons */}
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full ">
         {/* Primary CTA (Filled Blue Button) */}
-        <button className="w-full sm:w-auto px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold transition duration-200 flex items-center justify-center gap-2 shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50">
+        <button className="w-full sm:w-auto px-8 py-3 bg-[#025CA1] hover:bg-[#025CA1] text-white rounded-xl font-semibold transition duration-200 flex items-center justify-center gap-2 shadow-lg ">
           <Link href={ctaPrimary.link} className="text-lg">
             {ctaPrimary.label}
           </Link>
@@ -47,7 +47,7 @@ export const GuideHero = () => {
         </button>
 
         {/* Secondary CTA (Outlined Button) */}
-        <button className="w-full sm:w-auto px-8 py-3 bg-white border-2 border-blue-600 text-blue-600 hover:bg-blue-50 hover:text-blue-700 rounded-xl font-semibold transition duration-200 flex items-center text-sm justify-center gap-2 shadow-md">
+        <button className="w-full sm:w-auto px-8 py-3 bg-white border-2 border-[#025CA1] text-[#025CA1] hover:bg-blue-50 hover:text-[#025CA1] rounded-xl font-semibold transition duration-200 flex items-center text-sm justify-center gap-2 shadow-md">
           <Link href={ctaSecondary.link} className="text-lg">
             {ctaSecondary.label}
           </Link>

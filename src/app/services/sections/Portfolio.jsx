@@ -69,15 +69,15 @@ const Portfolio = () => {
   const ServiceCard = ({ title, subheading, link }) => (
     <Link
       href={link}
-      className="flex flex-col p-6 hover:border-blue-500 border border-neutral-200 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 bg-white group cursor-pointer"
+      className="flex flex-col p-6 hover:border-[#085DA0] border-2 border-neutral-200 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 bg-white group cursor-pointer"
     >
       {/* Icon */}
       <div className="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg mb-4">
-        <Target className="w-6 h-6 text-blue-600" />
+        <Target className="w-6 h-6 text-[#085DA0]" />
       </div>
 
       {/* Title */}
-      <h3 className="text-xl font-bold text-neutral-800 mb-2 group-hover:text-blue-700 transition-colors">
+      <h3 className="text-xl font-bold text-neutral-800 mb-2 group-hover:text-[#085DA0] transition-colors">
         {title}
       </h3>
 
@@ -88,7 +88,7 @@ const Portfolio = () => {
 
       {/* Learn More Link */}
       <div className="mt-auto">
-        <span className="flex items-center text-blue-600 font-semibold text-sm group-hover:text-blue-700 transition duration-150">
+        <span className="flex items-center text-[#085DA0] font-semibold text-sm group-hover:text-[#085DA0] transition duration-150">
           Learn More <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
         </span>
       </div>
@@ -99,7 +99,7 @@ const Portfolio = () => {
     <section className="mt-20 w-full flex items-center justify-center flex-col gap-5 px-4 sm:px-6 lg:px-8 py-10 bg-gray-50">
       {/* Header */}
       <div className="flex flex-col items-center justify-center gap-3 mb-10">
-        <h1 className="text-neutral-800 font-bold text-3xl md:text-5xl text-center">
+        <h1 className="text-neutral-800 font-bold text-3xl md:text-4xl text-center">
           Our Service Portfolio
         </h1>
         <p className="text-lg md:text-xl text-neutral-600 max-w-4xl text-center">

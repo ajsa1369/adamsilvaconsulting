@@ -91,7 +91,7 @@ const AISalesChat = () => {
       <div className="fixed bottom-6 right-6 z-50">
         <button
           onClick={() => setIsOpen(true)}
-          className="relative bg-blue-600 hover:bg-blue-700 text-white rounded-full p-3 shadow-lg transition-all duration-300 hover:scale-110 cursor-pointer"
+          className="relative bg-[#0F6CBB] hover:bg-[#095ca5] text-white rounded-full p-3 shadow-lg transition-all duration-300 hover:scale-110 cursor-pointer"
         >
           <MessageCircle size={22} />
           <span className="absolute -top-1 -right-1 w-4 h-4 bg-green-400 rounded-full border-2 border-white"></span>
@@ -108,26 +108,26 @@ const AISalesChat = () => {
     }`}>
       <div className="bg-white rounded-lg shadow-2xl flex flex-col h-full overflow-hidden">
         {/* Header */}
-        <div className="bg-blue-600 text-white p-4 flex items-center justify-between">
+        <div className="bg-[#0F6CBB] text-white p-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="bg-white rounded-full p-2">
-              <MessageCircle className="text-blue-600" size={24} />
+            <div className="bg-blue-100 rounded-md p-2">
+              <MessageCircle className="text-[#0F6CBB]" size={24} />
             </div>
             <div>
-              <h3 className="font-semibold text-lg">AI Sales Assistant</h3>
-              <p className="text-sm text-blue-100">Adam Silva Consulting</p>
+              <h3 className="font-semibold text-md">AI Sales Assistant</h3>
+              <p className="text-xs text-blue-100">Adam Silva Consulting</p>
             </div>
           </div>
           <div className="flex items-center gap-2">
             <button
               onClick={() => setIsExpanded(!isExpanded)}
-              className="hover:bg-blue-700 p-2 rounded transition-colors cursor-pointer"
+              className="hover:bg-[#095ba3] p-2 rounded transition-colors cursor-pointer"
             >
               <Maximize2 size={20} />
             </button>
             <button
               onClick={() => setIsOpen(false)}
-              className="hover:bg-blue-700 p-2 rounded transition-colors cursor-pointer"
+              className="hover:[#0F6CBB] p-2 rounded transition-colors cursor-pointer"
             >
               <X size={20} />
             </button>
@@ -149,7 +149,7 @@ const AISalesChat = () => {
                 </div>
               ) : (
                 <div className="flex justify-end">
-                  <div className="bg-blue-600 text-white rounded-lg p-4 max-w-[85%] shadow">
+                  <div className="bg-[#0F6CBB] text-white rounded-lg p-4 max-w-[85%] shadow">
                     <p className="text-sm leading-relaxed">{msg.text}</p>
                     <span className="text-xs text-blue-100 mt-2 block">
                       {formatTime(msg.timestamp)}
@@ -175,12 +175,12 @@ const AISalesChat = () => {
                 <ChevronDown size={20} />
               </button>
             </div>
-            <div className="space-y-2">
+            <div className="">
               {quickQuestions.map((question, idx) => (
                 <button
                   key={idx}
                   onClick={() => handleQuickQuestion(question)}
-                  className="w-full text-left text-sm text-gray-700 hover:text-blue-600 hover:bg-blue-50 p-2 rounded transition-colors cursor-pointer"
+                  className="w-full text-left text-sm text-gray-700 hover:text-[#0F6CBB] hover:bg-blue-50 p-2 rounded transition-colors cursor-pointer"
                 >
                   {question}
                 </button>
@@ -194,7 +194,7 @@ const AISalesChat = () => {
           <div className="px-4 py-2 bg-white border-t border-gray-200">
             <button
               onClick={() => setShowQuickQuestions(true)}
-              className="flex items-center gap-2 text-sm text-blue-600 hover:text-blue-700 transition-colors cursor-pointer"
+              className="flex items-center gap-2 text-sm text-[#0F6CBB] hover:text-[#0b5ea6] transition-colors cursor-pointer"
             >
               <ChevronUp size={18} />
               Show quick questions
@@ -211,11 +211,11 @@ const AISalesChat = () => {
               onChange={(e) => setInputValue(e.target.value)}
               onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
               placeholder="Ask about our AI services..."
-              className="flex-1 border-2 border-blue-600 rounded-full px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="flex-1 border border-[#0F6CBB] rounded-full px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
             <button
               onClick={() => handleSendMessage()}
-              className="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-3 transition-colors cursor-pointer"
+              className="bg-[#0F6CBB] hover:bg-[#085da7] text-white rounded-full p-3 transition-colors cursor-pointer"
             >
               <Send size={20} />
             </button>

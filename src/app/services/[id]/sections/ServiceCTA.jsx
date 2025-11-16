@@ -4,7 +4,7 @@ import React from 'react';
 
 const ServiceCTA = ({ cta }) => {
   return (
-    <section className="mt-20 mb-10 flex flex-col items-center justify-center gap-5 py-20 bg-blue-700">
+    <section className="mt-20 mb-10 flex flex-col items-center justify-center gap-5 py-20 bg-[#0a61ad]">
       <h4 className="text-3xl md:text-4xl font-bold text-white ">
         Ready To Get Started?
       </h4>

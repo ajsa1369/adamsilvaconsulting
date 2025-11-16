@@ -4,7 +4,7 @@ import React from 'react';
 
 const CaseStudyCTA = () => {
   return (
-    <section className="mt-20 mb-10 flex flex-col items-center justify-center gap-5 py-20 bg-blue-700">
+    <section className="mt-20 mb-10 flex flex-col items-center justify-center gap-5 py-20 bg-[#025CA1]">
       <h4 className="text-3xl md:text-4xl font-bold text-white ">
        Ready to Be Our Next Success Story?
       </h4>

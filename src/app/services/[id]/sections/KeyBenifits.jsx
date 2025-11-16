@@ -19,7 +19,7 @@ const KeyBenifits = ({ benefits }) => {
           >
             {/* Icon Wrapper */}
             <div className="p-4 rounded-full bg-blue-100 flex items-center  justify-center">
-              <Target className="text-blue-700" size={30} />
+              <Target className="text-[#0F6CBB]" size={30} />
             </div>
             <h4 className="text-xl font-bold text-neutral-800 text-center">
               {benefit.heading}

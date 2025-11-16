@@ -75,7 +75,7 @@ const CaseStudyCard = ({
       
       {/* LEFT SIDE */}
       <div className="w-full md:w-1/2">
-        <p className="text-sm font-semibold text-blue-600 mb-4">
+        <p className="text-sm font-semibold text-[#025CA1] mb-4">
           {industry} • {duration}
         </p>
 
@@ -96,7 +96,7 @@ const CaseStudyCard = ({
         </div>
 
         <button
-          className="flex items-center text-blue-600 font-semibold text-sm mt-4 transition duration-150 hover:text-blue-800"
+          className="flex items-center text-[#025CA1] font-semibold text-sm mt-4 transition duration-150 hover:text-blue-800"
           onClick={handleReadMoreClick}
         >
           Read Full Case Study

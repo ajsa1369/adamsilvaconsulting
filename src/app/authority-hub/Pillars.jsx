@@ -124,14 +124,14 @@ const Pillars = () => {
           >
             {/* Icon and Tagline */}
             <div className="flex items-start gap-4 mb-4">
-              <div className="flex-shrink-0 p-3 bg-blue-100 rounded-xl">
-                <pillar.Icon className="w-8 h-8 text-[#025CA2]" />
+              <div className="flex-shrink-0 p-2 bg-blue-100 rounded-xl">
+                <pillar.Icon className="w-6 h-6 text-[#025CA2]" />
               </div>
               <div>
                 <span className="text-xs font-semibold uppercase tracking-wider text-[#025CA2]">
                   {pillar.tagline}
                 </span>
-                     <h3 className="text-xl font-bold text-neutral-700 mt-3">
+                     <h3 className="text-xl font-bold text-neutral-700 mt-1">
               {pillar.title}
             </h3>
               </div>

@@ -33,7 +33,7 @@ const FocusAreaCard = ({ icon: Icon, title, description, studies }) => {
                  rounded-xl border border-gray-200 shadow-sm bg-white hover:shadow-lg transition duration-300"
     >
       {/* Icon */}
-      <div className="p-4 mb-6 rounded-xl bg-blue-50 text-blue-600">
+      <div className="p-4 mb-6 rounded-xl bg-blue-50 text-[#025CA1]">
         <Icon className="w-8 h-8 sm:w-10 sm:h-10" strokeWidth={1.5} />
       </div>
 

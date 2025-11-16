@@ -4,7 +4,7 @@ import React from 'react'
 
 const GuideCTA = () => {
  return (
-    <section className="mt-20 mb-10 flex flex-col items-center justify-center gap-5 py-20 bg-blue-600">
+    <section className="mt-20 mb-10 flex flex-col items-center justify-center gap-5 py-20 bg-[#025CA1]">
       <h4 className="text-3xl md:text-4xl font-bold text-black ">
      Need Custom Implementation Support?
       </h4>

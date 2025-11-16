@@ -18,7 +18,7 @@ export default function IntelligenceBriefings() {
   };
 
   return (
-    <div className="bg-gradient-to-br from-blue-700 via-blue-800 to-blue-900 py-20 px-6">
+    <div className="bg-gradient-to-br bg-[#025CA1] py-20 px-6">
       <div className="max-w-5xl mx-auto">
         {/* Heading */}
         <h2 className="text-3xl md:text-4xl  font-bold text-white text-center mb-6">

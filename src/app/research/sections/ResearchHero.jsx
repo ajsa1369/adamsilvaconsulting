@@ -12,7 +12,7 @@ const ResearchHero = () => {
       {/* Responsive Heading */}
       <h1 className='text-black text-4xl sm:text-5xl lg:text-6xl font-bold max-w-5xl leading-tight drop-shadow-sm'>
         <span>Research{" "}</span>
-        <span className='text-blue-700'>Hub</span>
+        <span className='text-[#025CA1]'>Hub</span>
       </h1>
 
       {/* Responsive Subtitle */}

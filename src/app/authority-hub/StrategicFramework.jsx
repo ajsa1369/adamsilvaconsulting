@@ -75,7 +75,7 @@ const StrategicFramework = () => {
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
       {/* Strategic Implementation Framework Header */}
       <div className="flex flex-col items-center justify-center mb-16">
-        <h2 className="text-3xl md:text-5xl font-extrabold text-neutral-800 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-neutral-800 text-center">
           Strategic Implementation Framework
         </h2>
         <p className="text-lg md:text-xl max-w-4xl text-center text-neutral-600 mt-3">
@@ -102,7 +102,7 @@ const StrategicFramework = () => {
 
       {/* Resource Library Section */}
       <div className="max-w-7xl mx-auto border border-neutral-200 rounded-2xl shadow-xl p-6 md:p-12 bg-white">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-neutral-800 text-center mb-10">
+        <h2 className="text-3xl md:text-4xl font-bold text-neutral-800 text-center mb-10">
           Resource Library
         </h2>
 
@@ -124,7 +124,7 @@ const StrategicFramework = () => {
               </p>
               <Link
                 href={resource.link}
-                className="flex items-center text-[#025CA2] font-semibold hover:-translate-y-1 hover:text-blue-700 transition duration-150 mt-auto"
+                className="flex items-center text-[#025CA2] font-semibold hover:-translate-y-1 hover:text-[#025CA2] transition duration-150 mt-auto"
               >
                 {resource.buttonText} <ArrowRight className="w-4 h-4 ml-2" />
               </Link>

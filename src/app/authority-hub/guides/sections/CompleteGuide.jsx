@@ -136,7 +136,7 @@ const DownloadModal = ({ isOpen, onClose }) => {
             <div className="flex items-start justify-between p-6 border-b border-gray-200">
               <div className="flex items-center space-x-3">
                 <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                  <Download className="w-5 h-5 text-blue-600" />
+                  <Download className="w-5 h-5 text-[#025CA1]" />
                 </div>
                 <div>
                   <h2 className="text-xl font-bold text-gray-900">Download Personalized Guide</h2>
@@ -153,22 +153,22 @@ const DownloadModal = ({ isOpen, onClose }) => {
               <div className="flex items-center space-x-4 w-full max-w-md">
                 <div className="flex items-center space-x-2 flex-1">
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold ${
-                    step === 1 ? 'bg-blue-600 text-white' : 'bg-blue-600 text-white'
+                    step === 1 ? 'bg-[#025CA1] text-white' : 'bg-[#025CA1] text-white'
                   }`}>
                     {step > 1 ? <Check className="w-4 h-4" /> : '1'}
                   </div>
-                  <span className={`text-sm font-medium ${step === 1 ? 'text-blue-600' : 'text-blue-600'}`}>
+                  <span className={`text-sm font-medium ${step === 1 ? 'text-[#025CA1]' : 'text-[#025CA1]'}`}>
                     Contact Information
                   </span>
                 </div>
-                <div className={`flex-1 h-0.5 ${step === 2 ? 'bg-blue-600' : 'bg-gray-200'}`}></div>
+                <div className={`flex-1 h-0.5 ${step === 2 ? 'bg-[#025CA1]' : 'bg-gray-200'}`}></div>
                 <div className="flex items-center space-x-2 flex-1">
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold ${
-                    step === 2 ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-500'
+                    step === 2 ? 'bg-[#025CA1] text-white' : 'bg-gray-200 text-gray-500'
                   }`}>
                     2
                   </div>
-                  <span className={`text-sm font-medium ${step === 2 ? 'text-blue-600' : 'text-gray-400'}`}>
+                  <span className={`text-sm font-medium ${step === 2 ? 'text-[#025CA1]' : 'text-gray-400'}`}>
                     Business Needs
                   </span>
                 </div>
@@ -310,7 +310,7 @@ const DownloadModal = ({ isOpen, onClose }) => {
                   </button>
                   <button
                     onClick={handleContinue}
-                    className="px-6 py-2.5 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition flex items-center"
+                    className="px-6 py-2.5 bg-[#025CA1] text-white font-semibold rounded-lg hover:bg-[#025CA1] transition flex items-center"
                   >
                     Continue
                     <ChevronRight className="w-5 h-5 ml-1" />
@@ -327,7 +327,7 @@ const DownloadModal = ({ isOpen, onClose }) => {
                   </button>
                   <button
                     onClick={handleGenerate}
-                    className="px-6 py-2.5 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition flex items-center"
+                    className="px-6 py-2.5 bg-[#025CA1] text-white font-semibold rounded-lg hover:bg-[#025CA1] transition flex items-center"
                   >
                     Generate Guide
                     <ChevronRight className="w-5 h-5 ml-1" />
@@ -348,7 +348,7 @@ const DownloadModal = ({ isOpen, onClose }) => {
             </p>
             <button
               onClick={handleCloseError}
-              className="w-full sm:w-auto px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition"
+              className="w-full sm:w-auto px-8 py-3 bg-[#025CA1] text-white font-semibold rounded-lg hover:bg-[#025CA1] transition"
             >
               Close
             </button>
@@ -388,14 +388,14 @@ const GuideLibraryCard = ({ heading, tagline, impact, category, sections, durati
       {/* Action Buttons */}
       <div className="flex space-x-3 mt-auto">
         <button
-          className="flex items-center px-4 py-2 rounded-lg text-sm text-blue-600 hover:text-blue-700 transition duration-150"
+          className="flex items-center px-4 py-2 rounded-lg text-sm text-[#025CA1] hover:text-blue-700 transition duration-150"
           onClick={() => onButtonClick(heading)}
         >
           <BookOpen className="w-4 h-4 mr-2" />
           Preview Guide
         </button>
         <button
-          className="flex items-center px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700 transition duration-150 shadow-md"
+          className="flex items-center px-4 py-2 rounded-lg bg-[#025CA1] text-white text-sm font-semibold hover:bg-[#025CA1] transition duration-150 shadow-md"
           onClick={() => onButtonClick(heading)}
         >
           <Download className="w-4 h-4 mr-2" />

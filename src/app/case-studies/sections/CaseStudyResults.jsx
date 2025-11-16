@@ -35,12 +35,12 @@ const ResultCard = ({ icon: Icon, value, description }) => {
                  rounded-xl border border-gray-200 shadow-sm bg-white hover:shadow-lg transition duration-300"
     >
       {/* Icon */}
-      <div className="p-3 mb-4 rounded-full bg-blue-50 text-blue-600">
+      <div className="p-3 mb-4 rounded-full bg-blue-50 text-[#025CA1]">
         <Icon className="w-6 h-6 sm:w-8 sm:h-8" strokeWidth={1.5} />
       </div>
 
       {/* Value */}
-      <p className="text-3xl  font-bold text-blue-900 mb-2">
+      <p className="text-3xl  font-bold text-[#025CA1] mb-2">
         {value}
       </p>
 

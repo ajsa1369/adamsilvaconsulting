@@ -31,14 +31,14 @@ const Hero = ({ hero }) => {
         </h2>
 
         <div className="flex items-center justify-center gap-5">
-          <button className="py-3 px-4 rounded-xl bg-blue-700 text-white flex items-center justify-center gap-2">
+          <button className="py-3 px-4 rounded-xl bg-[#0F6CBB] text-white flex items-center justify-center gap-2">
             <Link href="/contact" className="text-lg">
               Get Started
             </Link>
             <ArrowRight />
           </button>
 
-          <button className="py-3 px-4 rounded-xl border-2 border-blue-700 text-blue-600 hover:bg-blue-700 hover:text-white flex items-center justify-center gap-2">
+          <button className="py-3 px-4 rounded-xl border-2 border-[#0F6CBB] text-[#0F6CBB] hover:bg-[#0a65b5] hover:text-white flex items-center justify-center gap-2">
             <Link href="/contact" className="text-lg">
               View All Services
             </Link>

@@ -14,7 +14,7 @@ const Process = ({ process }) => {
             className=" flex flex-col items-center justify-start h-[200px] gap-5 rounded-xl  max-w-[22%] w-full"
           >
             {/* Icon Wrapper */}
-            <div className="w-12 h-12 p-5  rounded-full bg-blue-700 flex items-center  justify-center">
+            <div className="w-12 h-12 p-5  rounded-full bg-[#0F6CBB] flex items-center  justify-center">
               <span className='text-bold text-lg text-white'>{method.label}</span> 
             </div>
             <h4 className="text-lg font-bold text-neutral-800 text-center">

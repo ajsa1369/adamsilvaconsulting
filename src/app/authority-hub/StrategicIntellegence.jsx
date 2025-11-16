@@ -64,7 +64,7 @@ const StrategicIntellegence = () => {
     <section className="mt-20 py-10 px-4 sm:px-6 lg:px-8 bg-gray-50">
       {/* Header Section */}
       <div className="flex flex-col items-center justify-center gap-5 mb-12">
-        <h2 className="text-3xl md:text-5xl font-extrabold text-neutral-800 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-neutral-800 text-center">
           Latest Strategic Intelligence
         </h2>
         <p className="text-lg md:text-xl max-w-4xl text-center text-neutral-600">
@@ -74,7 +74,7 @@ const StrategicIntellegence = () => {
       </div>
 
       {/* Cards Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
         {strategies.map((item, index) => (
           <div
             key={index}

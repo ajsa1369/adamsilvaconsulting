@@ -11,7 +11,7 @@ const libraryItems = [
     description: "Detailed methodology for achieving featured snippet success, with case studies and implementation frameworks.",
     pages: "28 pages",
     downloads: "850 downloads",
-    tagColor: "text-blue-700",
+    tagColor: "text-[#025CA1]",
     tagBg: "bg-blue-100",
   },
   {
@@ -73,7 +73,7 @@ const LibraryItemCard = ({ tag, date, title, description, pages, downloads, tagC
       {/* Right Section: Download Button */}
       <div className="mt-4 sm:mt-0 flex-shrink-0">
         <button
-          className="flex items-center px-6 py-3 rounded-lg bg-blue-600 text-white text-base font-semibold hover:bg-blue-700 transition duration-150 shadow-md"
+          className="flex items-center px-6 py-3 rounded-lg bg-[#025CA1] text-white text-base font-semibold hover:bg-[#025CA1] transition duration-150 shadow-md"
           onClick={() => console.log('Downloading:', title)}
         >
           Download
