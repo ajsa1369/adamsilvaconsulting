@@ -1,22 +1,22 @@
-import { ArrowRight, BookOpen } from "lucide-react";
-import Link from "next/link";
-import React from "react";
+import { ArrowRight, BookOpen } from 'lucide-react';
+import Link from 'next/link';
+import React from 'react'
 
-const AuthorityCta = ({ cta, color, linearGradient }) => {
-  const buttonColor = `text-${color}-400`;
-  const borderColor = `border-${color}-900`;
+const AICTA = () => {
+  const buttonColor = `text-blue-800`;
+  const borderColor = `border-blue-900`;
 
   return (
     <section
-      className={`bg-gradient-to-r ${linearGradient} py-20 mt-20 w-full 
+      className={`bg-gradient-to-r from-blue-600 70% via-purple-600 to-purple-700 py-20 mt-20 w-full 
       flex flex-col items-center justify-center gap-10 px-4`}
     >
       <h5 className="text-3xl md:text-4xl font-bold text-white text-center">
-        {cta.heading}
+    Ready to Master AI Engine Optimization?
       </h5>
 
       <h6 className="text-xl text-white text-center max-w-4xl">
-        {cta.subheading}
+      Transform your content strategy with our comprehensive AEO and GEO implementation services
       </h6>
 
       {/* CTA BUTTONS */}
@@ -28,7 +28,7 @@ const AuthorityCta = ({ cta, color, linearGradient }) => {
             className={`p-3 w-full hover:-translate-y-1 sm:w-auto cursor-pointer ${buttonColor} border-2 text-lg ${borderColor} 
             font-semibold rounded-md bg-white flex items-center justify-center gap-3`}
           >
-            {cta.cta}
+            Start Your AEO Journey
             <ArrowRight />
           </button>
         </Link>
@@ -46,6 +46,6 @@ const AuthorityCta = ({ cta, color, linearGradient }) => {
       </div>
     </section>
   );
-};
+}
 
-export default AuthorityCta;
+export default AICTA
