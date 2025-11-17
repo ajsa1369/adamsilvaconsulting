@@ -24,26 +24,26 @@ const Sitemap = () => {
         { name: 'Services Overview', url: '/services' },
         {
           name: 'Technical SEO Architecture',
-          url: '/services/technical-seo-architecture',
+          url: '/services/seo-ppc-superpowers',
         },
-        { name: 'AI Content Creation', url: '/services/ai-content-creation' },
+        { name: 'AI Content Creation', url: '/services/content-media-creation' },
         {
           name: 'Topical Authority Strategy',
-          url: '/services/topical-authority-strategy',
+          url: '/authority-hub/topical-authority-architecture',
         },
         {
           name: 'Answer Engine Optimization',
-          url: '/services/answer-engine-optimization',
+          url: '/authority-hub/topical-authority-architecture',
         },
         {
           name: 'Generative Engine Optimization',
-          url: '/services/generative-engine-optimization',
+          url: '/services',
         },
         {
           name: 'AI Marketing Automation',
-          url: '/services/ai-marketing-automation',
+          url: '/services',
         },
-        { name: 'Real-time Analytics', url: '/services/real-time-analytics' },
+        { name: 'Real-time Analytics', url: '/services' },
       ],
     },
     {
@@ -60,7 +60,7 @@ const Sitemap = () => {
       links: [
         {
           name: 'AI Customer Service Representatives',
-          url: '/csr-initiatives',
+          url: '/services',
         },
       ],
     },

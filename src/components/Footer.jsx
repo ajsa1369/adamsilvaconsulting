@@ -138,7 +138,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/services/intellegent-cammpaigns"
+                  href="/services/intelligent-campaigns"
                   className="text-md hover:text-blue-400 transition-colors"
                 >
                   Intelligent Campaigns
@@ -163,7 +163,7 @@ export default function Footer() {
             <ul className="space-y-2 text-zinc-700">
               <li>
                 <Link
-                  href="/services/ai-website-landing-pages"
+                  href="/services/ai-websites-landing-pages"
                   className="text-md hover:text-blue-400 transition-colors"
                 >
                   AI Websites & Landing Pages
@@ -171,7 +171,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/services/real-time-analytics"
+                  href="/services/analytics-reporting"
                   className="text-md hover:text-blue-400 transition-colors"
                 >
                   Real-time Analytics
@@ -187,7 +187,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/services/competitor-marketing"
+                  href="/services/competitor-monitoring"
                   className="text-md hover:text-blue-400 transition-colors"
                 >
                   Competitor Monitoring
@@ -212,7 +212,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/services/outreah-partnerships"
+                  href="/services/outreach-partnerships"
                   className="text-md hover:text-blue-400 transition-colors"
                 >
                   Outreach & Partnerships
