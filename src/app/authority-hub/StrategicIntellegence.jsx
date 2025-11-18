@@ -10,11 +10,12 @@ const StrategicIntelligence = () => {
 
   // Fetch latest 6 blogs from API
   useEffect(() => {
+    const BASE_URL=process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000/api/blogs'
     const fetchBlogs = async () => {
       try {
         setLoading(true);
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000'}/api/blogs?limit=6`
+          `${BASE_URL}?limit=6`
         );
         
         if (!response.ok) {
@@ -152,7 +153,7 @@ const StrategicIntelligence = () => {
                     </span>
                   </div>
                   <Link
-                    href={`/authority-hub/insights/${item.slug}`}
+                    href={`/insights/${item.slug}`}
                     className="flex items-center text-[#025CA2] font-semibold hover:text-blue-700 transition duration-150 py-2 px-3 rounded-lg bg-blue-50 hover:bg-blue-100"
                   >
                     Read Analysis <ArrowRight className="w-4 h-4 ml-2" />

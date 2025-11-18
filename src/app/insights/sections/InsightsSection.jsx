@@ -15,12 +15,13 @@ export default function InsightsSection() {
   // Fetch blogs from API
   useEffect(() => {
     const fetchBlogs = async () => {
+      const BASE_URL=process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000/api/blogs';
       try {
         setLoading(true);
         setError(null);
 
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000'}/api/blogs`
+          `${BASE_URL}`
         );
 
         if (!response.ok) {
