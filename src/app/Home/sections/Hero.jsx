@@ -1,115 +1,104 @@
-'use client';
-import React from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { ArrowRight, Search, Target } from 'lucide-react';
+import { ArrowRight, Zap, Shield, Globe } from 'lucide-react';
 
-const Hero = () => {
-  const stats = [
-    {
-      value: '50%',
-      description: 'Projected organic traffic decline as AI answers queries directly',
-    },
-    {
-      value: '85%',
-      description: 'Of marketers feel unprepared for AI-driven search evolution',
-    },
-    {
-      value: '60%',
-      description: 'Higher engagement from AI-optimized content vs traditional content',
-    },
+export default function Hero() {
+  const protocols = [
+    { icon: Globe, name: 'UCP', desc: 'Discovery Layer', color: 'text-blue-400' },
+    { icon: Zap, name: 'ACP', desc: 'Execution Layer', color: 'text-green-400' },
+    { icon: Shield, name: 'AP2', desc: 'Trust Layer', color: 'text-purple-400' },
   ];
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      
-      <div className="absolute inset-0 bg-gradient-to-br from-white via-white via-30% to-blue-200 to-70%" />
-    
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-6 py-10">
-        <div className="flex flex-col items-center text-center space-y-8">
-          
+    <section className="relative bg-gradient-to-br from-[#0a1628] via-[#1a365d] to-[#0a1628] text-white overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0" style={{
+          backgroundImage: 'radial-gradient(circle at 25% 25%, #60a5fa 1px, transparent 1px)',
+          backgroundSize: '50px 50px'
+        }} />
+      </div>
 
-          <motion.h1
-            className="text-4xl md:text-5xl lg:text-7xl font-bold  font-black leading-tighter max-w-5xl"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <span className="text-black">Lead Generation </span>
-            <span className="text-[#085DA0] block">That AI Engines Trust</span>
-          </motion.h1>
-
-          {/* Subheading */}
-          <motion.div
-            className="text-lg md:text-xl lg:text-2xl text-gray-700 max-w-4xl leading-normal"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <p className="">
-              We generate high-quality leads through AI-optimized marketing strategies.
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Column */}
+          <div>
+            <span className="inline-block px-4 py-1 bg-[#085DA0]/30 text-[#60a5fa] rounded-full text-sm font-medium mb-6">
+              Integrated Digital Intelligence
+            </span>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+              The Agent Web<br />
+              <span className="text-[#60a5fa]">Is Here.</span>
+            </h1>
+            
+            <p className="text-xl text-gray-300 mb-8 max-w-lg">
+              AI agents now discover, negotiate, and execute transactions directly. Is your architecture protocol-ready?
             </p>
-            <p className="font-bold">
-              Advanced SEO/AEO/GEO + Content Creation + Marketing Automation = 
-            </p>
-            <p>
-              predictable lead generation in the AI-driven era.
-            </p>
-          </motion.div>
 
-          {/* CTA Buttons */}
-          <motion.div
-            className="flex flex-col sm:flex-row gap-4 mt-7"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-3 hover:-translate-y-1 px-8 py-2 bg-[#0F6DBC] hover:underline text-white font-semibold text-md rounded-xl shadow-lg hover:shadow-blue-600/30 transition-all duration-300"
-            >
-              <span>Start Building Authority</span>
-              <ArrowRight className="w-5 h-5" />
-            </Link>
-
-            <Link
-              href="/services"
-              className="inline-flex items-center gap-3 px-8 py-4  hover:bg-[#0F6DBC] hover:underline hover:text-white hover:-translate-y-1 text-blue-600 font-semibold text-lg rounded-xl shadow-lg border-2 border-blue-600 hover:shadow-blue-600/20 transition-all duration-300"
-            >
-              <span>Explore Services</span>
-              <Target className="w-5 h-5" />
-            </Link>
-          </motion.div>
-
-          {/* Stats Cards */}
-          <motion.div
-            className="flex flex-wrap items-center justify-center gap-6 mt-5 w-full"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                className="bg-white/80 backdrop-blur-sm rounded-xl p-5 shadow-xl border border-blue-100 hover:shadow-2xl w-[250px] hover:border-blue-300 transition-all duration-300"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
-                whileHover={{ y: -5 }}
+            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 bg-[#085DA0] hover:bg-[#0f6cbb] text-white px-8 py-4 rounded-lg font-semibold transition-all"
               >
-                <div className="text-2xl  font-semibold text-[#085DA0] mb-4">
-                  {stat.value}
-                </div>
-                <p className="text-gray-700 text-base  leading-relaxed">
-                  {stat.description}
-                </p>
-              </motion.div>
-            ))}
-          </motion.div>
+                Schedule Assessment
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+              <Link
+                href="/research/agentic-commerce-revolution"
+                className="inline-flex items-center justify-center gap-2 border border-white/30 hover:bg-white/10 text-white px-8 py-4 rounded-lg font-semibold transition-all"
+              >
+                Read the Research
+              </Link>
+            </div>
 
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-6">
+              <div>
+                <div className="text-3xl font-bold text-[#60a5fa]">1200%</div>
+                <div className="text-sm text-gray-400">AI Traffic Surge</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-[#60a5fa]">50%</div>
+                <div className="text-sm text-gray-400">Organic Decline</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-[#60a5fa]">&lt;300ms</div>
+                <div className="text-sm text-gray-400">Render Target</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column - Protocol Stack */}
+          <div className="relative">
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+              <h3 className="text-lg font-semibold text-gray-300 mb-6 text-center">The Protocol Stack</h3>
+              <div className="space-y-4">
+                {protocols.map((protocol, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center gap-4 bg-white/5 rounded-xl p-4 border border-white/10 hover:border-white/20 transition-all"
+                  >
+                    <div className={`w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center ${protocol.color}`}>
+                      <protocol.icon className="w-6 h-6" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="font-semibold text-white">{protocol.name}</div>
+                      <div className="text-sm text-gray-400">{protocol.desc}</div>
+                    </div>
+                    <div className="text-xs text-gray-500 uppercase tracking-wider">
+                      {index === 0 ? 'Google' : index === 1 ? 'OpenAI' : 'Google'}
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-6 pt-6 border-t border-white/10 text-center">
+                <p className="text-sm text-gray-400">SPA + SSR + Heavy Schema</p>
+                <p className="text-xs text-gray-500 mt-1">The only architecture that works</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   );
-};
-
-export default Hero;
+}
