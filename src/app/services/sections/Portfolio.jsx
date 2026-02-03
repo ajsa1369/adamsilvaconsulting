@@ -1,122 +1,79 @@
-import React from 'react';
-import { Target, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import { Server, Globe, Zap, Shield, FileCode, Target, ArrowRight } from 'lucide-react';
 
-const Portfolio = () => {
-  const services=[
+export default function Portfolio() {
+  const services = [
     {
-      title:"SEO & PPC Superpowers",
-      subheading:"Dominate search and paid advertising with AI-powered optimization",
-      link:"/services/seo-ppc-superpowers"
-    },{
-      title:"Content & Media Creation",
-      subheading:"Generate compelling content at scale with AI automation",
-      link:"/services/content-media-creation"
+      id: 'spa-ssr',
+      icon: Server,
+      title: 'SPA + SSR Architecture',
+      description: 'Token-efficient rendering with partial hydration and streaming HTML. Achieve <300ms render-to-fact speed.',
+      features: ['Partial hydration', 'Edge rendering', 'Deterministic snapshots', 'Zero layout shift'],
     },
     {
-      title:"Automated Omnichannel Communication",
-      subheading:"Engage customers seamlessly across all channels with AI personalization",
-      link:"/services/omnichannel-communication"
+      id: 'ucp',
+      icon: Globe,
+      title: 'UCP Implementation',
+      description: 'Universal Commerce Protocol for Google AI Mode, Gemini, and ecosystem agents. Full discovery layer.',
+      features: ['/.well-known/ucp manifest', 'Capability profiles', 'Multi-transport (REST/MCP/A2A)', 'Dynamic negotiation'],
     },
     {
-      title:"Intelligent Campaign Management",
-      subheading:"Orchestrate complex marketing funnels with real-time optimization",
-      link:"/services/intelligent-campaigns"
-    },{
-      title:"Real-time Analytics & Reporting",
-      subheading:"Monitor performance with live dashboards and predictive insights",
-      link:"/services/analytics-reporting"
-    },{
-      title:"Intent Graph Identity Targeting",
-      subheading:"Identify \"who is searching\" by linking behavior to identities",
-      link:"/services/intent-graph-targeting"
-    },{
-      title:"Precision Lead Management & Targeting",
-      subheading:"Qualify leads, build personas, and schedule engagement with AI",
-      link:"/services/precision-lead-management"
-    },{
-      title:"Security & Compliance",
-      subheading:"Operate confidently with AI-powered data protection and regulatory adherence",
-      link:"/services/security-compliance"
-    },{
-      title:"AI-Driven Website & Landing Pages",
-      subheading:"Instantly generate high-converting digital assets with automated optimization",
-      link:"/services/ai-websites-landing-pages"
-    },{
-      title:"Outreach & Partnerships",
-      subheading:"Connect with influencers and partners through AI-driven relationship management",
-      link:"/services/outreach-partnerships"
-    },{
-      title:"Voice Agent Lead Verification",
-      subheading:"Automated voice calls for lead verification, enrichment, and qualification",
-      link:"/services/voice-agent-verification"
-    },{
-      title:"AI Lead Generation & Qualification",
-      subheading:"Advanced AI systems for lead discovery, scoring, and automated qualification",
-      link:"/services/ai-lead-generation"
-    },{
-      title:"Omnichannel Lead Nurturing",
-      subheading:"Multi-channel automated follow-up sequences with AI personalization",
-      link:"/services/omnichannel-nurturing"
-    }
-    ,{
-      title:"Competitor Domain & Keyword Monitoring",
-      subheading:"Detect competitor strategies for strategic advantage and market response",
-      link:"/services/competitor-monitoring"
-    }
-  ]
-
-  // Component to render the card content
-  const ServiceCard = ({ title, subheading, link }) => (
-    <Link
-      href={link}
-      className="flex flex-col p-6 hover:border-[#085DA0] border-2 border-neutral-200 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 bg-white group cursor-pointer"
-    >
-      {/* Icon */}
-      <div className="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg mb-4">
-        <Target className="w-6 h-6 text-[#085DA0]" />
-      </div>
-
-      {/* Title */}
-      <h3 className="text-xl font-bold text-neutral-800 mb-2 group-hover:text-[#085DA0] transition-colors">
-        {title}
-      </h3>
-
-      {/* Subheading */}
-      <p className="text-neutral-600 text-base mb-6 flex-grow">
-        {subheading}
-      </p>
-
-      {/* Learn More Link */}
-      <div className="mt-auto">
-        <span className="flex items-center text-[#085DA0] font-semibold text-sm group-hover:text-[#085DA0] transition duration-150">
-          Learn More <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
-        </span>
-      </div>
-    </Link>
-  );
+      id: 'acp',
+      icon: Zap,
+      title: 'ACP Integration',
+      description: 'Agentic Commerce Protocol for ChatGPT Instant Checkout. Stripe SPT token flows.',
+      features: ['Shared Payment Tokens', 'Merchant control preserved', 'Real-time inventory sync', 'Tax & fulfillment routing'],
+    },
+    {
+      id: 'ap2',
+      icon: Shield,
+      title: 'AP2 Mandate System',
+      description: 'Cryptographic proof of consent with verifiable credentials. Non-repudiable audit trails.',
+      features: ['Cart/Intent/Payment mandates', 'ECDSA signatures', 'TEE integration', 'DID support'],
+    },
+    {
+      id: 'schema',
+      icon: FileCode,
+      title: 'Heavy Schema Markup',
+      description: 'JSON-LD knowledge graphs that agents understand, negotiate with, and act upon.',
+      features: ['@graph entity networks', 'Product + Offer nesting', 'Author credentialing', 'Return/shipping policies'],
+    },
+    {
+      id: 'aeo-geo',
+      icon: Target,
+      title: 'AEO/GEO Strategy',
+      description: 'Answer Engine & Generative Engine Optimization. Citation optimization for AI surfaces.',
+      features: ['Agent citation tracking', 'Capability coverage metrics', 'Machine-first content', 'Precomputed summaries'],
+    },
+  ];
 
   return (
-    <section className="mt-20 w-full flex items-center justify-center flex-col gap-5 px-4 sm:px-6 lg:px-8 py-10 bg-gray-50">
-      {/* Header */}
-      <div className="flex flex-col items-center justify-center gap-3 mb-10">
-        <h1 className="text-neutral-800 font-bold text-3xl md:text-4xl text-center">
-          Our Service Portfolio
-        </h1>
-        <p className="text-lg md:text-xl text-neutral-600 max-w-4xl text-center">
-          Integrated solutions that work together to build comprehensive digital
-          authority
-        </p>
-      </div>
-
-      {/* Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-        {services.map((service, index) => (
-          <ServiceCard key={index} {...service} />
-        ))}
+    <section className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service) => (
+            <div
+              key={service.id}
+              id={service.id}
+              className="bg-gray-50 rounded-xl p-6 border border-gray-200 hover:border-[#085DA0] hover:shadow-lg transition-all scroll-mt-24"
+            >
+              <div className="w-14 h-14 bg-[#085DA0]/10 rounded-xl flex items-center justify-center mb-4">
+                <service.icon className="w-7 h-7 text-[#085DA0]" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">{service.title}</h3>
+              <p className="text-gray-600 mb-4">{service.description}</p>
+              <ul className="space-y-2">
+                {service.features.map((feature, i) => (
+                  <li key={i} className="flex items-center gap-2 text-sm text-gray-600">
+                    <span className="w-1.5 h-1.5 bg-[#085DA0] rounded-full"></span>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
-};
-
-export default Portfolio;
+}

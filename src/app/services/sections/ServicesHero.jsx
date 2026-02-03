@@ -1,49 +1,30 @@
-import { ArrowRight } from 'lucide-react'
-import Link from 'next/link'
-import React from 'react'
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 
-const ServicesHero = () => {
+export default function ServicesHero() {
   return (
-    <section 
-      className='flex items-center justify-center flex-col gap-8 md:min-h-[70vh] p-8 text-center'
-      style={{
-        // Gradient background from white (top left) to blue-200 (bottom right)
-        background: 'linear-gradient(to bottom right, #ffffff, #EBF3FA)' 
-      }}
-    >
-      {/* Responsive Heading */}
-      <h1 className='text-black text-4xl sm:text-5xl lg:text-6xl font-bold max-w-5xl leading-tight drop-shadow-sm'>
-        <span>AI-Powered{" "}</span>
-        <span className='text-[#085DA0]'>Marketing Solutions</span>
-      </h1>
-
-      {/* Responsive Subtitle */}
-      <h2 className='text-lg md:text-xl text-neutral-700 max-w-4xl text-center leading-relaxed'>
-        Comprehensive services designed to build authority that AI engines cite and trust. Transform your digital presence with our integrated AI-first approach.
-      </h2>
-
-      {/* Action Buttons */}
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mt-4">
-        {/* Primary CTA Button/Link */}
-        <a 
-          href="/contact" 
-          className="bg-[#085DA0] flex items-center justify-center gap-3 text-md font-semibold p-4 sm:p-5 rounded-xl text-white shadow-xl hover:bg-[#07538d] transition duration-300 transform hover:scale-[1.02] cursor-pointer w-full sm:w-auto"
-        >
-          Start Your Transformation 
-          <ArrowRight className='w-5 h-5'/>
-        </a>
-        
-        {/* Secondary CTA Button/Link */}
-        <Link
-          href="/authority-hub" 
-          className="bg-white border-2 border-[#085DA0] flex items-center justify-center gap-3 text-md font-semibold p-4 sm:p-5 rounded-xl text-[#085DA0] hover:bg-blue-50 transition duration-300 transform hover:scale-[1.02] cursor-pointer w-full sm:w-auto"
-        >
-          Explore Authority Hub
-          <ArrowRight className='w-5 h-5'/>
-        </Link>
+    <section className="bg-gradient-to-br from-[#0a1628] via-[#1a365d] to-[#0a1628] text-white py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl">
+          <span className="inline-block px-4 py-1 bg-[#085DA0]/30 text-[#60a5fa] rounded-full text-sm font-medium mb-6">
+            Agentic Commerce Services
+          </span>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            Protocol-Native<br />
+            <span className="text-[#60a5fa]">Architecture</span>
+          </h1>
+          <p className="text-xl text-gray-300 mb-8">
+            End-to-end implementation of UCP, ACP, and AP2 on SPA + SSR + Heavy Schema stacks. From readiness audit to full certification.
+          </p>
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-2 bg-[#085DA0] hover:bg-[#0f6cbb] text-white px-8 py-4 rounded-lg font-semibold transition-all"
+          >
+            Schedule Assessment
+            <ArrowRight className="w-5 h-5" />
+          </Link>
+        </div>
       </div>
     </section>
-  )
+  );
 }
-
-export default ServicesHero
