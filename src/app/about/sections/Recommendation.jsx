@@ -1,71 +1,45 @@
-import { BookOpen, ChartColumn, TrendingUp, Users } from 'lucide-react';
-import React from 'react';
+import { CheckCircle } from 'lucide-react';
 
-const Recommendation = () => {
-  const recommendations = [
-    {
-      Icon: ChartColumn,
-      title: 'Conduct an AI Visibility Audit',
-      p1: "Use tools like ChatGPT, Perplexity, and Google's AI Overviews to ask conversational questions about your industry, products, and competitors.",
-      p2: 'Document where your brand is cited, sentiment of citations, and competitor frequency to establish a critical baseline for measuring progress.',
-    },
-    {
-      Icon: BookOpen,
-      title: 'Prioritize Foundational Investment',
-      p1: 'While AEO and GEO tactics are compelling, sustainable success requires proper foundations first.',
-      p2: 'Invest in building true Topical Authority and sound technical architecture before pursuing advanced visibility campaigns.',
-    },
-    {
-      Icon: Users,
-      title: 'Demand Integrated Teams',
-      p1: 'Success requires unprecedented collaboration across traditionally siloed marketing functions.',
-      p2: 'Select consultancies with demonstrably integrated SEO, content, digital PR, and technical teams working in seamless coordination.',
-    },
-    {
-      Icon: TrendingUp,
-      title: 'Evolve Measurement KPIs',
-      p1: 'Move beyond singular reliance on organic traffic and click-through rates to metrics that matter in an AI-driven world.',
-      p2: 'Focus on share of voice in AI responses, brand citation volume and sentiment, featured snippet ownership, and brand-entity recognition.',
-    },
+export default function Recommendation() {
+  const capabilities = [
+    'Root-level protocol manifest control',
+    'Multi-transport support (REST, MCP, A2A)',
+    'Cryptographic infrastructure (TEE, DID, VCs)',
+    'Token-efficient rendering (<300ms)',
+    'Heavy JSON-LD schema markup',
+    'AP2 mandate system integration',
   ];
-  return (
-    <section className="flex flex-col items-center justify-center mt-20 px-4 sm:px-6 lg:px-8">
-      <div className="flex items-center justify-center gap-4 flex-col max-w-5xl">
-        <h5 className="text-3xl md:text-4xl font-bold text-neutral-800 text-center">
-          Strategic Recommendations for Leadership
-        </h5>
-        <p className="text-lg md:text-xl text-neutral-700 max-w-4xl text-center leading-relaxed">
-          For decision-makers evaluating partners to navigate the AI-driven
-          landscape
-        </p>
-      </div>
-      <div className="mt-10 flex flex-wrap items-center justify-center gap-8">
-        {recommendations.map(({ Icon, title, p1, p2 }, index) => (
-          <div
-            key={index}
-            className="w-full md:w-[45%]  bg-white h-[280px] justify-start rounded-lg shadow-md p-6 flex flex-col items-start"
-          >
-            <div className="flex items-center justify-center gap-5">
-              <Icon className="w-8 h-8 text-[#0F6CBB] mb-4" />
-              <h6 className="text-xl font-bold text-neutral-800 mb-3">
-                {title}
-              </h6>
-            </div>
 
-            <p className="text-neutral-700 mb-4">{p1}</p>
-            <p className="text-neutral-700">{p2}</p>
+  return (
+    <section className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-gradient-to-br from-[#f8fafc] to-[#e2e8f0] rounded-2xl p-8 lg:p-12">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <span className="inline-block px-4 py-1 bg-[#085DA0]/10 text-[#085DA0] rounded-full text-sm font-medium mb-4">
+                The Solution
+              </span>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                Bespoke SPA + SSR Architecture
+              </h2>
+              <p className="text-lg text-gray-600">
+                Legacy platforms (Shopify, Wix, WordPress) hit a ceiling. Only custom architecture on your own infrastructure gives you the control required for full protocol compliance.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900 mb-4">What You Get:</h3>
+              <div className="grid sm:grid-cols-2 gap-3">
+                {capabilities.map((item, index) => (
+                  <div key={index} className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                    <span className="text-gray-700 text-sm">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-        ))}
-      </div>
-       <div className="mt-16 w-full max-w-7xl mx-auto rounded-2xl bg-[#0F6CBB] p-10 flex flex-col items-center justify-center gap-10 shadow-2xl">
-        <h5 className="text-3xl  font-extrabold text-white text-center">
-         The Transformation Timeline
-        </h5>
-        <p className='text-blue-300 max-w-3xl text-lg text-center'>The transition to an AI-dominated information landscape is not a distant trend—it is the current reality. Organizations that thrive will be those that move decisively to build genuine, verifiable authority.</p>
-        <p className='text-lg font-bold text-gray-800'>A firm with this comprehensive service portfolio is positioned not just to help clients adapt, but to empower them to lead.</p>
+        </div>
       </div>
     </section>
   );
-};
-
-export default Recommendation;
+}
