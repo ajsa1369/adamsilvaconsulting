@@ -190,6 +190,10 @@ export default function Navbar() {
               )}
             </div>
 
+            <Link href="/insights" className="text-gray-700 font-medium hover:text-[#0f6cbb] transition-colors">
+              Insights
+            </Link>
+
             <Link href="/about" className="text-gray-700 font-medium hover:text-[#0f6cbb] transition-colors">
               About
             </Link>
@@ -298,6 +302,14 @@ export default function Navbar() {
                 </div>
               )}
             </div>
+
+            <Link 
+              href="/insights" 
+              className="block text-gray-700 font-medium hover:text-[#0f6cbb] transition-colors py-2"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Insights
+            </Link>
 
             <Link 
               href="/about" 
