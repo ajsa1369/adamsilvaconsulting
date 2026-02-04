@@ -5,26 +5,41 @@ import { Mail, MapPin, Linkedin, ArrowRight } from 'lucide-react';
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
-  const services = [
-    { name: 'SPA + SSR Architecture', href: '/services#spa-ssr' },
-    { name: 'UCP Implementation', href: '/services#ucp' },
-    { name: 'ACP Integration', href: '/services#acp' },
-    { name: 'AP2 Mandate System', href: '/services#ap2' },
-    { name: 'Heavy Schema Markup', href: '/services#schema' },
-    { name: 'AEO/GEO Strategy', href: '/services#aeo-geo' },
+  const leadGenServices = [
+    { name: 'AI Lead Generation', href: '/services/ai-lead-generation' },
+    { name: 'Voice Agent Verification', href: '/services/voice-agent-verification' },
+    { name: 'Precision Lead Management', href: '/services/precision-lead-management' },
+    { name: 'Intent Graph Targeting', href: '/services/intent-graph-targeting' },
   ];
 
-  const research = [
-    { name: 'The Agentic Commerce Revolution', href: '/research/agentic-commerce-revolution' },
-    { name: 'Protocol Deep Dive: UCP vs ACP', href: '/research/ucp-vs-acp' },
-    { name: 'Token Efficiency & SSR', href: '/research/token-efficiency' },
-    { name: 'From SEO to AEO/GEO', href: '/research/seo-to-aeo-geo' },
+  const marketingServices = [
+    { name: 'Intelligent Campaigns', href: '/services/intelligent-campaigns' },
+    { name: 'SEO & PPC Superpowers', href: '/services/seo-ppc-superpowers' },
+    { name: 'Content & Media Creation', href: '/services/content-media-creation' },
+    { name: 'Omnichannel Nurturing', href: '/services/omnichannel-nurturing' },
+  ];
+
+  const techServices = [
+    { name: 'AI Websites & Landing Pages', href: '/services/ai-websites-landing-pages' },
+    { name: 'Real-Time Analytics', href: '/services/real-time-analytics' },
+    { name: 'Security & Compliance', href: '/services/security-compliance' },
+    { name: 'Competitor Monitoring', href: '/services/competitor-monitoring' },
+    { name: 'Omnichannel Communication', href: '/services/omnichannel-communication' },
+    { name: 'Outreach & Partnerships', href: '/services/outreach-partnerships' },
+  ];
+
+  const resources = [
+    { name: 'Authority Hub', href: '/authority-hub' },
+    { name: 'Implementation Guides', href: '/authority-hub/guides' },
+    { name: 'Research & Whitepapers', href: '/research' },
+    { name: 'Case Studies', href: '/case-studies' },
+    { name: 'Insights Blog', href: '/insights' },
+    { name: 'Sitemap', href: '/sitemap' },
   ];
 
   const company = [
-    { name: 'About', href: '/about' },
-    { name: 'Services', href: '/services' },
-    { name: 'Research', href: '/research' },
+    { name: 'About Us', href: '/about' },
+    { name: 'All Services', href: '/services' },
     { name: 'Contact', href: '/contact' },
   ];
 
@@ -35,8 +50,8 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
-              <h3 className="text-2xl font-bold">Ready for the Agentic Web?</h3>
-              <p className="text-gray-400 mt-2">The protocols are live. Don't let legacy architecture render you invisible.</p>
+              <h3 className="text-2xl font-bold">Ready for AI-Powered Marketing?</h3>
+              <p className="text-gray-400 mt-2">From lead generation to authority building—transform your marketing with AI.</p>
             </div>
             <Link
               href="/contact"
@@ -51,7 +66,7 @@ export default function Footer() {
 
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <Link href="/">
@@ -65,7 +80,7 @@ export default function Footer() {
             </Link>
             <p className="text-sm font-semibold text-[#0f6cbb] mb-2">Integrated Digital Intelligence</p>
             <p className="text-gray-400 text-sm mb-6 max-w-sm">
-              Enterprise architecture for the agentic commerce era. We implement UCP, ACP, and AP2 protocols on SPA + SSR + Heavy Schema stacks.
+              AI-powered marketing services for the agentic commerce era. Lead generation, authority building, and intelligent automation.
             </p>
             <div className="space-y-3">
               <a href="mailto:info@adamsilvaconsulting.com" className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm">
@@ -76,14 +91,23 @@ export default function Footer() {
                 <MapPin className="w-4 h-4" />
                 Port Saint Lucie, Florida
               </div>
+              <a
+                href="https://linkedin.com/in/adamsilvaconsulting"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm"
+              >
+                <Linkedin className="w-5 h-5" />
+                LinkedIn
+              </a>
             </div>
           </div>
 
-          {/* Services */}
+          {/* Lead Gen & Sales */}
           <div>
-            <h4 className="font-semibold text-white mb-4">Services</h4>
+            <h4 className="font-semibold text-white mb-4 text-sm">Lead Generation</h4>
             <ul className="space-y-2">
-              {services.map((item) => (
+              {leadGenServices.map((item) => (
                 <li key={item.name}>
                   <Link href={item.href} className="text-gray-400 hover:text-white transition-colors text-sm">
                     {item.name}
@@ -93,11 +117,25 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Research */}
+          {/* Marketing */}
           <div>
-            <h4 className="font-semibold text-white mb-4">Research</h4>
+            <h4 className="font-semibold text-white mb-4 text-sm">Marketing</h4>
             <ul className="space-y-2">
-              {research.map((item) => (
+              {marketingServices.map((item) => (
+                <li key={item.name}>
+                  <Link href={item.href} className="text-gray-400 hover:text-white transition-colors text-sm">
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Resources */}
+          <div>
+            <h4 className="font-semibold text-white mb-4 text-sm">Resources</h4>
+            <ul className="space-y-2">
+              {resources.map((item) => (
                 <li key={item.name}>
                   <Link href={item.href} className="text-gray-400 hover:text-white transition-colors text-sm">
                     {item.name}
@@ -109,7 +147,7 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="font-semibold text-white mb-4">Company</h4>
+            <h4 className="font-semibold text-white mb-4 text-sm">Company</h4>
             <ul className="space-y-2">
               {company.map((item) => (
                 <li key={item.name}>
@@ -119,16 +157,17 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-            <div className="mt-6">
-              <a
-                href="https://linkedin.com/in/adamsilvaconsulting"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm"
-              >
-                <Linkedin className="w-5 h-5" />
-                LinkedIn
-              </a>
+            <div className="mt-6 pt-4 border-t border-gray-800">
+              <h4 className="font-semibold text-white mb-3 text-sm">More Services</h4>
+              <ul className="space-y-2">
+                {techServices.slice(0, 4).map((item) => (
+                  <li key={item.name}>
+                    <Link href={item.href} className="text-gray-400 hover:text-white transition-colors text-sm">
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
@@ -147,6 +186,9 @@ export default function Footer() {
               </Link>
               <Link href="/terms" className="text-gray-400 hover:text-white transition-colors">
                 Terms of Service
+              </Link>
+              <Link href="/sitemap" className="text-gray-400 hover:text-white transition-colors">
+                Sitemap
               </Link>
             </div>
           </div>
