@@ -1,124 +1,112 @@
-import { SquareArrowOutUpRightIcon } from 'lucide-react';
-import React from 'react';
+import Link from 'next/link';
 
-const Sitemap = () => {
-  // Renamed from 'page'
-  const sites = [
+export const metadata = {
+  title: 'Sitemap | Adam Silva Consulting',
+  description: 'Complete site navigation for Adam Silva Consulting - AI-powered marketing and agentic commerce.',
+};
+
+export default function SitemapPage() {
+  const sections = [
     {
       title: 'Main Pages',
       links: [
-        { name: 'Home', url: '/' },
-        {
-          name: 'About',
-          url: '/about',
-        },
-        {
-          name: 'Contact',
-          url: '/contact',
-        },
+        { name: 'Home', href: '/' },
+        { name: 'About', href: '/about' },
+        { name: 'Contact', href: '/contact' },
+        { name: 'Services', href: '/services' },
       ],
     },
     {
       title: 'Services',
       links: [
-        { name: 'Services Overview', url: '/services' },
-        {
-          name: 'Technical SEO Architecture',
-          url: '/services/seo-ppc-superpowers',
-        },
-        { name: 'AI Content Creation', url: '/services/content-media-creation' },
-        {
-          name: 'Topical Authority Strategy',
-          url: '/authority-hub/topical-authority-architecture',
-        },
-        {
-          name: 'Answer Engine Optimization',
-          url: '/authority-hub/topical-authority-architecture',
-        },
-        {
-          name: 'Generative Engine Optimization',
-          url: '/services',
-        },
-        {
-          name: 'AI Marketing Automation',
-          url: '/services',
-        },
-        { name: 'Real-time Analytics', url: '/services' },
+        { name: 'AI Lead Generation', href: '/services/ai-lead-generation' },
+        { name: 'Voice Agent Verification', href: '/services/voice-agent-verification' },
+        { name: 'Omnichannel Nurturing', href: '/services/omnichannel-nurturing' },
+        { name: 'Precision Lead Management', href: '/services/precision-lead-management' },
+        { name: 'SEO & PPC Superpowers', href: '/services/seo-ppc-superpowers' },
+        { name: 'Content & Media Creation', href: '/services/content-media-creation' },
+        { name: 'Intelligent Campaigns', href: '/services/intelligent-campaigns' },
+        { name: 'Intent Graph Targeting', href: '/services/intent-graph-targeting' },
+        { name: 'AI Websites & Landing Pages', href: '/services/ai-websites-landing-pages' },
+        { name: 'Real-Time Analytics', href: '/services/real-time-analytics' },
+        { name: 'Security & Compliance', href: '/services/security-compliance' },
+        { name: 'Competitor Monitoring', href: '/services/competitor-monitoring' },
+        { name: 'Omnichannel Communication', href: '/services/omnichannel-communication' },
+        { name: 'Outreach & Partnerships', href: '/services/outreach-partnerships' },
       ],
     },
     {
-      title: 'Authority & Content',
+      title: 'Insights',
       links: [
-        { name: 'Authority Hub', url: '/authority-hub' },
-        { name: 'Industry Insights', url: '/insights' },
-        { name: 'Case Studies', url: '/case-studies' },
-        { name: 'Research Hub', url: '/research' },
+        { name: 'All Insights', href: '/insights' },
+        { name: 'Marketing Pain Points 2025', href: '/insights/marketing-pain-points-2025-resource-crunch-to-ai-solution' },
+        { name: 'AI Content Operations', href: '/insights/ai-content-operations-scaling-quality-with-automation' },
+        { name: 'AEO vs GEO', href: '/insights/aeo-vs-geo-understanding-the-new-search-landscape' },
+        { name: 'Integrated Service Ecosystem', href: '/insights/the-integrated-service-ecosystem-strategic-flywheel-analysis' },
+        { name: 'Zero-Click Searches', href: '/insights/zero-click-searches-the-new-reality-of-information-discovery' },
+        { name: 'Building Topical Authority', href: '/insights/building-topical-authority' },
+        { name: 'AI Authority Imperative', href: '/insights/the-ai-authority-imperative-gartner-50-percent-traffic-decline-prediction' },
+        { name: 'E-E-A-T in the Age of AI', href: '/insights/e-e-a-t-in-the-age-of-generative-ai-building-unshakeable-authority' },
       ],
     },
     {
-      title: 'AI Solutions',
+      title: 'Authority Hub',
       links: [
-        {
-          name: 'AI Customer Service Representatives',
-          url: '/services',
-        },
+        { name: 'Authority Hub Home', href: '/authority-hub' },
+        { name: 'All Guides', href: '/authority-hub/guides' },
+        { name: 'AI Engine Optimization Mastery', href: '/authority-hub/ai-engine-optimization-mastery' },
+        { name: 'Topical Authority Architecture', href: '/authority-hub/topical-authority-architecture' },
+        { name: 'Technical Framework Excellence', href: '/authority-hub/technical-framework-excellence' },
+        { name: 'AI-Powered Content Operations', href: '/authority-hub/ai-powered-content-operations' },
+        { name: 'Marketing Automation Intelligence', href: '/authority-hub/marketing-automation-intelligence' },
+        { name: 'CSR & Trust Engineering', href: '/authority-hub/csr-and-trust-engineering' },
       ],
     },
     {
-      title: 'Legal & Policies',
+      title: 'Resources',
       links: [
-        { name: 'Privacy Policy', url: '/policy' },
-        { name: 'Terms of Service', url: '/terms' },
-        { name: 'Sitemap', url: '/sitemap' },
+        { name: 'Case Studies', href: '/case-studies' },
+        { name: 'Research', href: '/research' },
       ],
     },
   ];
 
   return (
-    <main className="mb-20 py-10 max-w-5xl px-4 sm:px-6 lg:px-8 mx-auto">
+    <main className="min-h-screen bg-white">
       {/* Header */}
-      <h1 className="text-4xl md:text-6xl text-neutral-800 font-extrabold mb-3">
-        Sitemap
-      </h1>
-      <p className="text-neutral-600 text-lg md:text-xl mb-12 max-w-4xl">
-        Complete overview of all pages and sections on the Adam Silva Consulting
-        website. Designed for easy navigation and comprehensive access to our AI
-        authority resources.
-      </p>
+      <section className="bg-gradient-to-br from-[#0a1628] to-[#1a365d] text-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-4xl font-bold mb-4">Sitemap</h1>
+          <p className="text-xl text-gray-300">Complete navigation for Adam Silva Consulting</p>
+        </div>
+      </section>
 
-      {/* Grid Container */}
-      <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {sites.map((site, index) => (
-          <div
-            key={index}
-            className="p-6 border border-gray-200 rounded-xl "
-          >
-            <h2 className="text-2xl text-neutral-800 font-bold  pb-2 mb-4">
-              {site.title}
-            </h2>
-            <ul className="space-y-2">
-              {site.links.map((link, linkIndex) => (
-                <li
-                  key={linkIndex}
-                  className="list-none group" // Apply group class here
-                >
-                  <a
-                    href={link.url}
-                    className="text-lg text-neutral-700 hover:text-blue-600 transition-colors flex items-center gap-2"
-                  >
-                    {link.name || link.title}
-                    <SquareArrowOutUpRightIcon
-                      className="w-4 h-4 ml-1 text-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-200" // Icon hidden by default, visible on hover
-                    />
-                  </a>
-                </li>
-              ))}
-            </ul>
+      {/* Sitemap Content */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+            {sections.map((section, index) => (
+              <div key={index}>
+                <h2 className="text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-gray-200">
+                  {section.title}
+                </h2>
+                <ul className="space-y-2">
+                  {section.links.map((link, i) => (
+                    <li key={i}>
+                      <Link 
+                        href={link.href}
+                        className="text-[#085DA0] hover:text-[#0f6cbb] hover:underline transition-colors"
+                      >
+                        {link.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </div>
+      </section>
     </main>
   );
-};
-
-export default Sitemap;
+}
