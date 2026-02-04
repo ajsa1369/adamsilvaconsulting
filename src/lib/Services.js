@@ -158,7 +158,7 @@ export const services = [
           'AI content creation systems analyze engagement data, audience preferences, and trending topics to generate content that is more likely to resonate with your target audience while maintaining your brand voice and messaging.',
       },
     ],
-    CTA: 'Transform your business with AI-powered seo & ppc superpowers. Contact us today for a comprehensive strategy consultation.',
+    CTA: 'Transform your business with AI-powered content & media creation. Contact us today for a comprehensive strategy consultation.',
   },
 
   {
@@ -193,7 +193,7 @@ export const services = [
       {
         heading: 'Operational Efficiency',
         description:
-          'Automate routine communications while maintaining personal touch and qualityg',
+          'Automate routine communications while maintaining personal touch and quality',
       },
     ],
     Process: [
@@ -324,7 +324,7 @@ export const services = [
   },
 
   {
-    id: 'analytics-reporting',
+    id: 'real-time-analytics',
     Hero: {
       heading: 'Real-time Analytics & Reporting',
       subheading:
@@ -634,7 +634,7 @@ export const services = [
           'Our system supports major privacy regulations including GDPR, CCPA, PIPEDA, and other regional data protection laws, with automatic updates as regulations evolve and new requirements emerge.',
       },
       {
-        question: 'WHow does AI enhance security monitoring?',
+        question: 'How does AI enhance security monitoring?',
         answer:
           'AI continuously analyzes network traffic, user behavior, and system activities to detect anomalies and potential threats in real-time, enabling proactive response to security incidents before they cause damage.',
       },
@@ -793,7 +793,7 @@ export const services = [
       {
         question: 'How does AI identify the best influencers and partners?',
         answer:
-          'AAI analyzes audience demographics, engagement rates, content quality, brand alignment, and historical partnership performance to identify influencers and partners most likely to drive meaningful business results.',
+          'AI analyzes audience demographics, engagement rates, content quality, brand alignment, and historical partnership performance to identify influencers and partners most likely to drive meaningful business results.',
       },
       {
         question: 'What makes AI-powered outreach more effective?',
@@ -1132,8 +1132,4 @@ export const services = [
     ],
     CTA: 'Transform your business with AI-powered competitor domain & keyword monitoring. Contact us today for a comprehensive strategy consultation.',
   },
-
-
-
-  
 ];
