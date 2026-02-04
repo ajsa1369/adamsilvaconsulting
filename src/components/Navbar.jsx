@@ -2,91 +2,100 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, Bot, Megaphone, Globe, MessageSquare, BookOpen } from 'lucide-react';
 
 export default function Navbar() {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
-  const [isResearchOpen, setIsResearchOpen] = useState(false);
+  const [isResourcesOpen, setIsResourcesOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
-  const [isMobileResearchOpen, setIsMobileResearchOpen] = useState(false);
+  const [isMobileResourcesOpen, setIsMobileResourcesOpen] = useState(false);
 
-  const services = [
+  const serviceCategories = [
     {
-      heading: 'SPA + SSR Architecture',
-      subheading: 'Token-efficient, agent-first rendering',
-      link: '/services#spa-ssr'
+      title: 'Lead Generation & Sales',
+      icon: <Bot className="w-5 h-5" />,
+      items: [
+        { name: 'AI Lead Generation', href: '/services/ai-lead-generation', desc: 'Intent signals & predictive scoring' },
+        { name: 'Voice Agent Verification', href: '/services/voice-agent-verification', desc: 'AI-powered lead qualification' },
+        { name: 'Precision Lead Management', href: '/services/precision-lead-management', desc: 'ML scoring & intelligent routing' },
+        { name: 'Intent Graph Targeting', href: '/services/intent-graph-targeting', desc: 'Behavioral intent signals' },
+      ]
     },
     {
-      heading: 'UCP Implementation',
-      subheading: 'Universal Commerce Protocol setup',
-      link: '/services#ucp'
+      title: 'Marketing & Campaigns',
+      icon: <Megaphone className="w-5 h-5" />,
+      items: [
+        { name: 'Intelligent Campaigns', href: '/services/intelligent-campaigns', desc: 'AI-optimized campaign management' },
+        { name: 'SEO & PPC Superpowers', href: '/services/seo-ppc-superpowers', desc: 'AEO + GEO + traditional SEO' },
+        { name: 'Content & Media Creation', href: '/services/content-media-creation', desc: 'AI-assisted content production' },
+        { name: 'Omnichannel Nurturing', href: '/services/omnichannel-nurturing', desc: 'Multi-channel AI orchestration' },
+      ]
     },
     {
-      heading: 'ACP Integration',
-      subheading: 'Agentic Commerce Protocol & ChatGPT checkout',
-      link: '/services#acp'
+      title: 'Technology & Analytics',
+      icon: <Globe className="w-5 h-5" />,
+      items: [
+        { name: 'AI Websites & Landing Pages', href: '/services/ai-websites-landing-pages', desc: 'SPA + SSR for agents & humans' },
+        { name: 'Real-Time Analytics', href: '/services/real-time-analytics', desc: 'AI citation & engagement tracking' },
+        { name: 'Security & Compliance', href: '/services/security-compliance', desc: 'Enterprise-grade protection' },
+        { name: 'Competitor Monitoring', href: '/services/competitor-monitoring', desc: 'AI-powered market intelligence' },
+      ]
     },
     {
-      heading: 'AP2 Mandate System',
-      subheading: 'Cryptographic trust & verifiable credentials',
-      link: '/services#ap2'
+      title: 'Communication & Growth',
+      icon: <MessageSquare className="w-5 h-5" />,
+      items: [
+        { name: 'Omnichannel Communication', href: '/services/omnichannel-communication', desc: 'Unified messaging across channels' },
+        { name: 'Outreach & Partnerships', href: '/services/outreach-partnerships', desc: 'AI-assisted partnership development' },
+      ]
     },
-    {
-      heading: 'Heavy Schema Markup',
-      subheading: 'JSON-LD knowledge graphs for agents',
-      link: '/services#schema'
-    },
-    {
-      heading: 'AEO/GEO Strategy',
-      subheading: 'Agent & Generative Engine Optimization',
-      link: '/services#aeo-geo'
-    }
   ];
 
-  const research = [
+  const resources = [
     {
-      heading: 'The Agentic Commerce Revolution',
-      subheading: 'Enterprise architecture for UCP, ACP, AP2',
-      link: '/research/agentic-commerce-revolution'
+      heading: 'Authority Hub',
+      subheading: 'Build topical authority that AI agents trust',
+      link: '/authority-hub',
+      featured: true
     },
     {
-      heading: 'Protocol Deep Dive: UCP vs ACP',
-      subheading: 'Comparing Google and OpenAI approaches',
-      link: '/research/ucp-vs-acp'
+      heading: 'Research & Whitepapers',
+      subheading: 'Deep dives into agentic commerce',
+      link: '/research'
     },
     {
-      heading: 'Token Efficiency & SSR',
-      subheading: 'Why architecture matters for AI crawlers',
-      link: '/research/token-efficiency'
+      heading: 'Case Studies',
+      subheading: 'Real results from AI-powered marketing',
+      link: '/case-studies'
     },
     {
-      heading: 'From SEO to AEO/GEO',
-      subheading: 'The shift to agent-centric optimization',
-      link: '/research/seo-to-aeo-geo'
-    }
+      heading: 'Implementation Guides',
+      subheading: 'Step-by-step protocol guides',
+      link: '/authority-hub/guides'
+    },
   ];
 
-  let servicesTimeout, researchTimeout;
+  let servicesTimeout, resourcesTimeout;
   
   const handleServicesEnter = () => {
     clearTimeout(servicesTimeout);
     setIsServicesOpen(true);
-    setIsResearchOpen(false);
+    setIsResourcesOpen(false);
   };
 
   const handleServicesLeave = () => {
     servicesTimeout = setTimeout(() => setIsServicesOpen(false), 200);
   };
 
-  const handleResearchEnter = () => {
-    clearTimeout(researchTimeout);
-    setIsResearchOpen(true);
+  const handleResourcesEnter = () => {
+    clearTimeout(resourcesTimeout);
+    setIsResourcesOpen(true);
     setIsServicesOpen(false);
   };
 
-  const handleResearchLeave = () => {
-    researchTimeout = setTimeout(() => setIsResearchOpen(false), 200);
+  const handleResourcesLeave = () => {
+    resourcesTimeout = setTimeout(() => setIsResourcesOpen(false), 200);
   };
 
   return (
@@ -112,7 +121,7 @@ export default function Navbar() {
               Home
             </Link>
 
-            {/* Services Dropdown */}
+            {/* Services Mega Menu */}
             <div
               className="relative"
               onMouseEnter={handleServicesEnter}
@@ -127,58 +136,77 @@ export default function Navbar() {
               </Link>
 
               {isServicesOpen && (
-                <div className="absolute top-full left-0 mt-2 w-96 bg-white shadow-lg rounded-md border border-gray-200 z-50">
-                  <div className="p-2">
-                    <div className="px-4 py-2 border-b border-gray-100">
-                      <span className="text-xs font-semibold text-[#085DA0] uppercase tracking-wider">Agentic Commerce Services</span>
+                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[800px] bg-white shadow-xl rounded-lg border border-gray-200 z-50">
+                  <div className="p-6">
+                    <div className="flex items-center justify-between mb-4 pb-3 border-b border-gray-100">
+                      <span className="text-sm font-semibold text-[#085DA0] uppercase tracking-wider">AI-Powered Marketing Services</span>
+                      <Link href="/services" className="text-sm text-[#085DA0] hover:underline font-medium">View All →</Link>
                     </div>
-                    {services.map((service, index) => (
-                      <Link
-                        key={index}
-                        href={service.link}
-                        className="block px-4 py-3 hover:bg-gray-50 transition-colors group rounded-md"
-                      >
-                        <div className="font-semibold text-gray-900 group-hover:text-[#0f6cbb]">
-                          {service.heading}
+                    <div className="grid grid-cols-2 gap-6">
+                      {serviceCategories.map((category, idx) => (
+                        <div key={idx}>
+                          <div className="flex items-center gap-2 mb-3">
+                            <span className="text-[#085DA0]">{category.icon}</span>
+                            <span className="font-semibold text-gray-900 text-sm">{category.title}</span>
+                          </div>
+                          <div className="space-y-1">
+                            {category.items.map((item, itemIdx) => (
+                              <Link
+                                key={itemIdx}
+                                href={item.href}
+                                className="block px-3 py-2 hover:bg-gray-50 rounded-md transition-colors group"
+                              >
+                                <div className="font-medium text-gray-800 group-hover:text-[#0f6cbb] text-sm">{item.name}</div>
+                                <div className="text-xs text-gray-500">{item.desc}</div>
+                              </Link>
+                            ))}
+                          </div>
                         </div>
-                        <div className="text-sm text-gray-600 mt-1">
-                          {service.subheading}
+                      ))}
+                    </div>
+                    <div className="mt-4 pt-4 border-t border-gray-100 bg-gradient-to-r from-[#085DA0]/5 to-transparent rounded-lg p-4">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <div className="font-semibold text-gray-900">Agentic Commerce Protocols</div>
+                          <div className="text-sm text-gray-600">UCP, ACP, AP2 implementation & optimization</div>
                         </div>
-                      </Link>
-                    ))}
+                        <Link href="/services#protocols" className="px-4 py-2 bg-[#085DA0] text-white rounded-md text-sm font-medium hover:bg-[#0f6cbb] transition-colors">
+                          Learn More
+                        </Link>
+                      </div>
+                    </div>
                   </div>
                 </div>
               )}
             </div>
 
-            {/* Research Dropdown */}
+            {/* Resources Dropdown */}
             <div
               className="relative"
-              onMouseEnter={handleResearchEnter}
-              onMouseLeave={handleResearchLeave}
+              onMouseEnter={handleResourcesEnter}
+              onMouseLeave={handleResourcesLeave}
             >
-              <Link 
-                href="/research"
+              <button 
                 className="text-gray-700 font-medium hover:text-[#0f6cbb] transition-colors flex items-center gap-1"
               >
-                Research
-                <ChevronDown className={`w-4 h-4 transition-transform ${isResearchOpen ? 'rotate-180' : ''}`} />
-              </Link>
+                Resources
+                <ChevronDown className={`w-4 h-4 transition-transform ${isResourcesOpen ? 'rotate-180' : ''}`} />
+              </button>
 
-              {isResearchOpen && (
-                <div className="absolute top-full left-0 mt-2 w-96 bg-white shadow-lg rounded-md border border-gray-200 z-50">
+              {isResourcesOpen && (
+                <div className="absolute top-full left-0 mt-2 w-80 bg-white shadow-lg rounded-md border border-gray-200 z-50">
                   <div className="p-2">
-                    <div className="px-4 py-2 border-b border-gray-100">
-                      <span className="text-xs font-semibold text-[#085DA0] uppercase tracking-wider">Research & Insights</span>
-                    </div>
-                    {research.map((item, index) => (
+                    {resources.map((item, index) => (
                       <Link
                         key={index}
                         href={item.link}
-                        className="block px-4 py-3 hover:bg-gray-50 transition-colors group rounded-md"
+                        className={`block px-4 py-3 hover:bg-gray-50 transition-colors group rounded-md ${item.featured ? 'bg-gradient-to-r from-[#085DA0]/10 to-transparent' : ''}`}
                       >
-                        <div className="font-semibold text-gray-900 group-hover:text-[#0f6cbb]">
-                          {item.heading}
+                        <div className="flex items-center gap-2">
+                          {item.featured && <BookOpen className="w-4 h-4 text-[#085DA0]" />}
+                          <span className={`font-semibold group-hover:text-[#0f6cbb] ${item.featured ? 'text-[#085DA0]' : 'text-gray-900'}`}>
+                            {item.heading}
+                          </span>
                         </div>
                         <div className="text-sm text-gray-600 mt-1">
                           {item.subheading}
@@ -225,7 +253,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-200">
+        <div className="lg:hidden bg-white border-t border-gray-200 max-h-[80vh] overflow-y-auto">
           <div className="px-4 py-4 space-y-3">
             <Link 
               href="/" 
@@ -246,7 +274,7 @@ export default function Navbar() {
               </button>
 
               {isMobileServicesOpen && (
-                <div className="pl-4 mt-2 space-y-2 border-l-2 border-[#085DA0]">
+                <div className="pl-4 mt-2 space-y-4 border-l-2 border-[#085DA0]">
                   <Link
                     href="/services"
                     className="block py-2 text-[#085DA0] font-semibold"
@@ -254,48 +282,48 @@ export default function Navbar() {
                   >
                     View All Services →
                   </Link>
-                  {services.map((service, index) => (
-                    <Link
-                      key={index}
-                      href={service.link}
-                      className="block py-2"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      <div className="font-semibold text-gray-900">{service.heading}</div>
-                      <div className="text-sm text-gray-600">{service.subheading}</div>
-                    </Link>
+                  {serviceCategories.map((category, idx) => (
+                    <div key={idx}>
+                      <div className="font-semibold text-gray-800 text-sm mb-2 flex items-center gap-2">
+                        <span className="text-[#085DA0]">{category.icon}</span>
+                        {category.title}
+                      </div>
+                      {category.items.map((item, itemIdx) => (
+                        <Link
+                          key={itemIdx}
+                          href={item.href}
+                          className="block py-1.5 pl-7"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          <div className="text-gray-700 text-sm">{item.name}</div>
+                        </Link>
+                      ))}
+                    </div>
                   ))}
                 </div>
               )}
             </div>
 
-            {/* Mobile Research */}
+            {/* Mobile Resources */}
             <div>
               <button
-                onClick={() => setIsMobileResearchOpen(!isMobileResearchOpen)}
+                onClick={() => setIsMobileResourcesOpen(!isMobileResourcesOpen)}
                 className="w-full flex items-center justify-between text-gray-700 font-medium hover:text-[#0f6cbb] transition-colors py-2 cursor-pointer"
               >
-                <span>Research</span>
-                <ChevronDown className={`w-4 h-4 transition-transform ${isMobileResearchOpen ? 'rotate-180' : ''}`} />
+                <span>Resources</span>
+                <ChevronDown className={`w-4 h-4 transition-transform ${isMobileResourcesOpen ? 'rotate-180' : ''}`} />
               </button>
 
-              {isMobileResearchOpen && (
+              {isMobileResourcesOpen && (
                 <div className="pl-4 mt-2 space-y-2 border-l-2 border-[#085DA0]">
-                  <Link
-                    href="/research"
-                    className="block py-2 text-[#085DA0] font-semibold"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    View All Research →
-                  </Link>
-                  {research.map((item, index) => (
+                  {resources.map((item, index) => (
                     <Link
                       key={index}
                       href={item.link}
                       className="block py-2"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      <div className="font-semibold text-gray-900">{item.heading}</div>
+                      <div className={`font-semibold ${item.featured ? 'text-[#085DA0]' : 'text-gray-900'}`}>{item.heading}</div>
                       <div className="text-sm text-gray-600">{item.subheading}</div>
                     </Link>
                   ))}
