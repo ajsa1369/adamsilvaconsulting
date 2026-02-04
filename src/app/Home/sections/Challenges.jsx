@@ -1,95 +1,70 @@
+import { AlertTriangle, XCircle } from 'lucide-react';
 
-'use client';
-import React from 'react';
-import { Users, TrendingUp, Target, Rocket } from 'lucide-react';
-
-const Challenges = () => {
-  const challenges = [
+export default function Challenges() {
+  const antiPatterns = [
     {
-      icon: Users,
-      title: 'Resource Crunch',
-      challenge: 'Limited budgets, staff shortages, and 85% of marketers feeling unprepared for AI integration.',
-      solution: 'AI automation acts as force multiplier, enabling lean teams to achieve unprecedented scale.',
+      platform: 'Shopify',
+      issues: ['No root-level /.well-known access', 'Partial UCP (Plus tier only)', 'No TEE/DID support'],
     },
     {
-      icon: TrendingUp,
-      title: 'Visibility Crisis',
-      challenge: 'Organic traffic drops of 25-40% as AI engines answer queries directly, bypassing websites.',
-      solution: 'AEO/GEO strategies shift focus from clicks to citations, building sustainable visibility.',
+      platform: 'WordPress',
+      issues: ['Plugin-dependent (fragile)', 'REST only transport', 'Heavy hydration tax'],
     },
     {
-      icon: Target,
-      title: 'Data Dilemma',
-      challenge: 'Companies analyze less than 40% of collected data while struggling to prove marketing ROI.',
-      solution: 'AI analytics transforms raw data into strategic intelligence with clear attribution.',
-    },
-    {
-      icon: Rocket,
-      title: 'Engagement Gap',
-      challenge: 'Consumers demand hyper-personalization while customer acquisition costs increase 5-25x.',
-      solution: 'Next-best-action AI delivers individual experiences at scale, improving lifetime value.',
+      platform: 'Wix / Squarespace',
+      issues: ['Zero protocol support', 'No endpoint control', 'Obscured origins block VCs'],
     },
   ];
 
   return (
-    <section className="bg-gray-50 py-20 px-6">
-      <div className="max-w-7xl mx-auto">
-        {/* Heading */}
+    <section className="py-20 bg-[#0a1628] text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl  font-bold text-black mb-6">
-            Solving Critical{' '}
-            <span className="text-[#085DA0]">Business Challenges</span>
+          <span className="inline-flex items-center gap-2 px-4 py-1 bg-red-500/20 text-red-400 rounded-full text-sm font-medium mb-4">
+            <AlertTriangle className="w-4 h-4" />
+            Legacy Platforms Fail
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Why Traditional Platforms Can't Compete
           </h2>
-          <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-            Our integrated AI strategy directly addresses the most pressing pain points facing modern marketing leaders in 2025.
+          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+            Shared hosting, multi-tenant platforms, and app proxies cannot give you the root-level control that UCP, ACP, and AP2 require.
           </p>
         </div>
 
-        {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {challenges.map((item, index) => {
-            const Icon = item.icon;
-            return (
-              <div
-                key={index}
-                className="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
-              >
-                {/* Icon */}
-                <div className="w-16 h-16 bg-[#085DA0] rounded-lg flex items-center justify-center mb-6">
-                  <Icon className="w-8 h-8 text-white" />
-                </div>
+        <div className="grid md:grid-cols-3 gap-8">
+          {antiPatterns.map((item, index) => (
+            <div
+              key={index}
+              className="bg-white/5 rounded-xl p-6 border border-white/10"
+            >
+              <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                <XCircle className="w-5 h-5 text-red-400" />
+                {item.platform}
+              </h3>
+              <ul className="space-y-3">
+                {item.issues.map((issue, i) => (
+                  <li key={i} className="flex items-start gap-2 text-gray-400 text-sm">
+                    <span className="text-red-400 mt-1">✕</span>
+                    {issue}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
 
-                {/* Title */}
-                <h3 className="text-2xl font-bold text-black mb-6">
-                  {item.title}
-                </h3>
-
-                {/* Challenge */}
-                <div className="mb-6">
-                  <p className="text-xs font-semibold  text-blue-500 uppercase tracking-wider mb-2">
-                    The Challenge
-                  </p>
-                  <p className="text-gray-700 leading-relaxed">
-                    {item.challenge}
-                  </p>
-                </div>
-
-                {/* Solution */}
-                <div>
-                  <p className="text-xs font-semibold text-blue-600 uppercase tracking-wider mb-2">
-                    Our Solution
-                  </p>
-                  <p className="text-gray-700 leading-relaxed">
-                    {item.solution}
-                  </p>
-                </div>
-              </div>
-            );
-          })}
+        <div className="mt-16 text-center">
+          <div className="inline-block bg-gradient-to-r from-[#085DA0]/20 to-[#0f6cbb]/20 rounded-xl p-8 border border-[#085DA0]/30">
+            <p className="text-lg text-gray-300 mb-2">
+              <strong className="text-white">The Solution:</strong> Bespoke SPA + SSR on your own infrastructure
+            </p>
+            <p className="text-sm text-gray-400">
+              Direct control over /.well-known routes, custom API design, zero constraints on protocol implementation.
+            </p>
+          </div>
         </div>
       </div>
     </section>
   );
-};
-
-export default Challenges;
+}

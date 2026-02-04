@@ -1,393 +1,154 @@
-'use client';
-import React, { useState } from 'react';
-import {
-  Mail,
-  Phone,
-  MapPin,
-  MessageSquare,
-  Linkedin,
-  Instagram,
-  Facebook,
-  Twitter,
-  Youtube,
-} from 'lucide-react';
-import Image from 'next/image';
 import Link from 'next/link';
+import Image from 'next/image';
+import { Mail, MapPin, Linkedin, ArrowRight } from 'lucide-react';
 
 export default function Footer() {
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    consent: false,
-  });
-  const [showSuccess, setShowSuccess] = useState(false);
+  const currentYear = new Date().getFullYear();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const services = [
+    { name: 'SPA + SSR Architecture', href: '/services#spa-ssr' },
+    { name: 'UCP Implementation', href: '/services#ucp' },
+    { name: 'ACP Integration', href: '/services#acp' },
+    { name: 'AP2 Mandate System', href: '/services#ap2' },
+    { name: 'Heavy Schema Markup', href: '/services#schema' },
+    { name: 'AEO/GEO Strategy', href: '/services#aeo-geo' },
+  ];
 
-    if (
-      !formData.firstName ||
-      !formData.lastName ||
-      !formData.email ||
-      !formData.consent
-    ) {
-      alert('Please fill all fields and accept the consent checkbox');
-      return;
-    }
+  const research = [
+    { name: 'The Agentic Commerce Revolution', href: '/research/agentic-commerce-revolution' },
+    { name: 'Protocol Deep Dive: UCP vs ACP', href: '/research/ucp-vs-acp' },
+    { name: 'Token Efficiency & SSR', href: '/research/token-efficiency' },
+    { name: 'From SEO to AEO/GEO', href: '/research/seo-to-aeo-geo' },
+  ];
 
-    setShowSuccess(true);
-    setFormData({ firstName: '', lastName: '', email: '', consent: false });
-
-    setTimeout(() => {
-      setShowSuccess(false);
-    }, 5000);
-  };
-
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: type === 'checkbox' ? checked : value,
-    }));
-  };
+  const company = [
+    { name: 'About', href: '/about' },
+    { name: 'Services', href: '/services' },
+    { name: 'Research', href: '/research' },
+    { name: 'Contact', href: '/contact' },
+  ];
 
   return (
-    <footer className="bg-white text-gray-300 mt-auto">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* First Section - Logo and Links */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
-          {/* Logo and Description */}
-          <div className="lg:col-span-1">
-            <Image
-              src="/assets/logo.png"
-              alt="Logo"
-              width={108}
-              height={108}
-              className="mb-4"
-            />
-            <p className="text-sm text-gray-700 leading-relaxed">
-              Advanced lead generation through AI-optimized marketing
-              strategies, AEO/GEO optimization, and intelligent automation
-              systems.
-            </p>
-          </div>
-
-          {/* Core Services */}
-          <div>
-            <h3 className="text-black text-2xl font-semibold mb-4">
-              Core Services
-            </h3>
-            <ul className="space-y-2 text-zinc-600">
-              <li>
-                <Link
-                  href="/services/ai-lead-generation"
-                  className="text-md hover:text-blue-400 transition-colors"
-                >
-                  AI Lead Generation
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/voice-agent-verification"
-                  className="text-md hover:text-blue-400 transition-colors"
-                >
-                  Voice Agent Verification
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/omnichannel-nurturing"
-                  className="text-md hover:text-blue-400 transition-colors"
-                >
-                  Omnichannel Nurturing
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/precision-lead-management"
-                  className="text-md hover:text-blue-400 transition-colors"
-                >
-                  Precision Lead Management
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Marketing Services */}
-          <div>
-            <h3 className="text-black text-2xl font-semibold mb-4">
-              Marketing Services
-            </h3>
-            <ul className="space-y-2 text-zinc-600">
-              <li>
-                <Link
-                  href="/services/seo-ppc-superpowers"
-                  className="text-md hover:text-blue-400 transition-colors"
-                >
-                  SEO & PPC Superpowers
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/content-media-creation"
-                  className="text-md hover:text-blue-400 transition-colors"
-                >
-                  Content & Media Creation
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/intelligent-campaigns"
-                  className="text-md hover:text-blue-400 transition-colors"
-                >
-                  Intelligent Campaigns
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/intent-graph-targeting"
-                  className="text-md hover:text-blue-400 transition-colors"
-                >
-                  Intent Graph Targeting
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Technology Solutions */}
-          <div>
-            <h3 className="text-black text-2xl font-semibold mb-4">
-              Technology Solutions
-            </h3>
-            <ul className="space-y-2 text-zinc-700">
-              <li>
-                <Link
-                  href="/services/ai-websites-landing-pages"
-                  className="text-md hover:text-blue-400 transition-colors"
-                >
-                  AI Websites & Landing Pages
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/analytics-reporting"
-                  className="text-md hover:text-blue-400 transition-colors"
-                >
-                  Real-time Analytics
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/security-compliance"
-                  className="text-md hover:text-blue-400 transition-colors"
-                >
-                  Security & Compliance
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/competitor-monitoring"
-                  className="text-md hover:text-blue-400 transition-colors"
-                >
-                  Competitor Monitoring
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Strategic Services */}
-          <div>
-            <h3 className="text-black text-2xl font-semibold mb-4">
-              Strategic Services
-            </h3>
-            <ul className="space-y-2 text-gray-700">
-              <li>
-                <Link
-                  href="/services/omnichannel-communication"
-                  className="text-md hover:text-blue-400 transition-colors"
-                >
-                  Omnichannel Communication
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/outreach-partnerships"
-                  className="text-md hover:text-blue-400 transition-colors"
-                >
-                  Outreach & Partnerships
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Second Section - Contact Info */}
-        <div className="flex flex-col space-y-3 mb-8 text-gray-800">
-          <a
-            href="mailto:info@adamsilvaconsulting.com"
-            className="flex items-center gap-3 text-sm hover:text-[#085DA0] transition-colors"
-          >
-            <Mail size={18} color="#085DA0" />
-            <span>info@adamsilvaconsulting.com</span>
-          </a>
-          <a
-            href="tel:954-818-9248"
-            className="flex items-center gap-3 text-sm hover:text-[#085DA0] transition-colors"
-          >
-            <Phone size={18} color="#085DA0" />
-            <span>954-818-9248</span>
-          </a>
-          <div className="flex items-center gap-3 text-sm">
-            <MapPin size={18} color="#085DA0" />
-            <span>Virtual Consulting Worldwide</span>
-          </div>
-        </div>
-
-        <hr className="border-gray-700 mb-8" />
-
-        {/* Third Section - Social Media */}
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
-          <div className="flex items-center text-black gap-4">
-            <span className="text-sm font-semibold">Follow us:</span>
-            <div className="flex gap-3">
-              <a
-                href="https://linkedin.com/company/adam-silva-consulting"
-                target="black"
-                className="bg-white text-gray-700 p-2 rounded hover:bg-blue-400 hover:text-white transition-colors"
-              >
-                <Linkedin size={18} />
-              </a>
-              <a
-                href="https://twitter.com/adamsilvaconsulting"
-                className="bg-white text-gray-700 p-2 rounded hover:bg-blue-400 hover:text-white transition-colors"
-              >
-                <Instagram size={18} />
-              </a>
-              <a
-                href="https://facebook.com/adamsilvaconsulting"
-                className="bg-white text-gray-700 p-2 rounded hover:bg-blue-400 hover:text-white transition-colors"
-              >
-                <Facebook size={18} />
-              </a>
-              <a
-                href="https://instagram.com/adamsilvaconsulting"
-                className="bg-white text-gray-700 p-2 rounded hover:bg-blue-400 hover:text-white transition-colors"
-              >
-                <Twitter size={18} />
-              </a>
-              <a
-                href="https://youtube.com/@adamsilvaconsulting"
-                className="bg-white text-gray-700 p-2 rounded hover:bg-blue-400 hover:text-white transition-colors"
-              >
-                <Youtube size={18} />
-              </a>
-            </div>
-          </div>
-          <p className="text-sm text-black">
-            Get exclusive AI marketing insights delivered weekly
-          </p>
-        </div>
-
-        {/* Fourth Section - Newsletter */}
-        <div className="bg-[#E6F3FF] rounded-lg p-8 mb-8">
-          <div className="max-w-2xl mx-auto">
-            <div className="flex justify-center mb-4">
-              <MessageSquare size={48} className="text-[#085DA0]" />
-            </div>
-            <h3 className="text-2xl font-bold text-gray-900 text-center mb-2">
-              Stay Updated
-            </h3>
-            <p className="text-gray-800 text-center mb-6">
-              Get AI marketing insights delivered to your inbox
-            </p>
-
-            {showSuccess && (
-              <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4 text-center">
-                Thank you for subscribing! Check your inbox for confirmation.
-              </div>
-            )}
-
+    <footer className="bg-[#0a1628] text-white">
+      {/* CTA Section */}
+      <div className="border-b border-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-                <input
-                  type="text"
-                  name="firstName"
-                  placeholder="First Name"
-                  value={formData.firstName}
-                  onChange={handleChange}
-                  className="px-4 py-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900"
-                />
-                <input
-                  type="text"
-                  name="lastName"
-                  placeholder="Last Name"
-                  value={formData.lastName}
-                  onChange={handleChange}
-                  className="px-4 py-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900"
-                />
-              </div>
-              <input
-                type="email"
-                name="email"
-                placeholder="Email Address"
-                value={formData.email}
-                onChange={handleChange}
-                className="w-full px-4 py-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4 text-gray-900"
+              <h3 className="text-2xl font-bold">Ready for the Agentic Web?</h3>
+              <p className="text-gray-400 mt-2">The protocols are live. Don't let legacy architecture render you invisible.</p>
+            </div>
+            <Link
+              href="/contact"
+              className="bg-[#085DA0] hover:bg-[#0f6cbb] text-white px-8 py-3 rounded-md font-medium transition-all flex items-center gap-2 whitespace-nowrap"
+            >
+              Schedule Consultation
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Footer */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+          {/* Brand Column */}
+          <div className="lg:col-span-2">
+            <Link href="/">
+              <Image
+                src="/assets/logo-white.png"
+                alt="Adam Silva Consulting"
+                width={150}
+                height={50}
+                className="h-12 w-auto mb-4"
               />
-              <label className="flex items-start gap-3 mb-4 cursor-pointer">
-                <input
-                  type="checkbox"
-                  name="consent"
-                  checked={formData.consent}
-                  onChange={handleChange}
-                  className="mt-1 w-4 h-4 cursor-pointer"
-                />
-                <span className="text-sm text-gray-800">
-                  I consent to receive marketing communications from Adam Silva
-                  Consulting. You can unsubscribe at any time.{' '}
-                  <a href="#" className="underline hover:text-gray-900">
-                    Privacy Policy
-                  </a>
-                </span>
-              </label>
-              <button
-                onClick={handleSubmit}
-                className="w-full cursor-pointer bg-[#085DA0] text-white py-3 rounded font-semibold hover:-translate-y-1 transition-colors"
+            </Link>
+            <p className="text-sm font-semibold text-[#0f6cbb] mb-2">Integrated Digital Intelligence</p>
+            <p className="text-gray-400 text-sm mb-6 max-w-sm">
+              Enterprise architecture for the agentic commerce era. We implement UCP, ACP, and AP2 protocols on SPA + SSR + Heavy Schema stacks.
+            </p>
+            <div className="space-y-3">
+              <a href="mailto:info@adamsilvaconsulting.com" className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm">
+                <Mail className="w-4 h-4" />
+                info@adamsilvaconsulting.com
+              </a>
+              <div className="flex items-center gap-2 text-gray-400 text-sm">
+                <MapPin className="w-4 h-4" />
+                Port Saint Lucie, Florida
+              </div>
+            </div>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h4 className="font-semibold text-white mb-4">Services</h4>
+            <ul className="space-y-2">
+              {services.map((item) => (
+                <li key={item.name}>
+                  <Link href={item.href} className="text-gray-400 hover:text-white transition-colors text-sm">
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Research */}
+          <div>
+            <h4 className="font-semibold text-white mb-4">Research</h4>
+            <ul className="space-y-2">
+              {research.map((item) => (
+                <li key={item.name}>
+                  <Link href={item.href} className="text-gray-400 hover:text-white transition-colors text-sm">
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h4 className="font-semibold text-white mb-4">Company</h4>
+            <ul className="space-y-2">
+              {company.map((item) => (
+                <li key={item.name}>
+                  <Link href={item.href} className="text-gray-400 hover:text-white transition-colors text-sm">
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <div className="mt-6">
+              <a
+                href="https://linkedin.com/in/adamsilvaconsulting"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm"
               >
-                Subscribe
-              </button>
+                <Linkedin className="w-5 h-5" />
+                LinkedIn
+              </a>
             </div>
           </div>
         </div>
+      </div>
 
-        <hr className="border-gray-700 mb-6" />
-
-        {/* Fifth Section - Copyright and Links */}
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm">
-          <p className="text-gray-600">
-            © {new Date().getFullYear()} Adam Silva Consulting. All rights
-            reserved.
-          </p>
-          <div className="flex text-gray-600 gap-6">
-            <Link
-              href="/privacy"
-              className="hover:text-blue-400 transition-colors"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              href="/terms"
-              className="hover:text-blue-400 transition-colors"
-            >
-              Terms
-            </Link>
-            <Link
-              href="sitemap"
-              className="hover:text-blue-400 transition-colors"
-            >
-              Sitemap
-            </Link>
+      {/* Bottom Bar */}
+      <div className="border-t border-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-gray-400 text-sm">
+              © {currentYear} Adam Silva Consulting. All rights reserved.
+            </p>
+            <div className="flex items-center gap-6 text-sm">
+              <Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">
+                Privacy Policy
+              </Link>
+              <Link href="/terms" className="text-gray-400 hover:text-white transition-colors">
+                Terms of Service
+              </Link>
+            </div>
           </div>
         </div>
       </div>

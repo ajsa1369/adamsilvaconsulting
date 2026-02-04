@@ -1,121 +1,75 @@
-'use client';
-import React from 'react';
-import { Target, Rocket, Shield } from 'lucide-react';
+import Link from 'next/link';
+import { ArrowRight, Bot, FileCode, Shield, Sparkles } from 'lucide-react';
 
-const About = () => {
-  const keyPoints = [
+export default function About() {
+  const capabilities = [
     {
-      icon: Target,
-      heading: "Solve, Don't Just Sell",
-      description:
-        'Content structured around key business pain points: Resource Crunch, Visibility Crisis, Data Dilemma, and Engagement Gap. We solve problems, not just promote services.',
+      icon: Bot,
+      title: 'Protocol-Native Architecture',
+      description: 'We implement UCP, ACP, and AP2 from the ground up—not as afterthoughts bolted onto legacy platforms.',
     },
     {
-      icon: Rocket,
-      heading: 'Build the Flywheel',
-      description:
-        'Architecture supports continuous feedback loops where performance data informs content creation, creating compound growth in authority and visibility.',
+      icon: FileCode,
+      title: 'SPA + SSR Engineering',
+      description: 'Token-efficient rendering with <300ms render-to-fact speed. AI agents pick you first.',
     },
     {
       icon: Shield,
-      heading: 'Trust is Ultimate Asset',
-      description:
-        'Verifiable data and CSR initiatives provide auditable proof of trustworthiness, the most valuable signal in AI evaluation frameworks.',
+      title: 'Cryptographic Trust',
+      description: 'AP2 mandate systems with verifiable credentials. Audit trails that resolve disputes.',
+    },
+    {
+      icon: Sparkles,
+      title: 'Heavy Schema Markup',
+      description: 'JSON-LD knowledge graphs that agents understand, negotiate with, and act upon.',
     },
   ];
 
-  const metrics = [
-    { label: 'AI Engine Citations', value: 85 },
-    { label: 'Featured Snippet Ownership', value: 72 },
-    { label: 'Brand Authority Score', value: 91 },
-    { label: 'Voice Search Responses', value: 68 },
-  ];
-
   return (
-    <section className="bg-white py-20 px-6">
-      <div className="max-w-7xl mx-auto">
-        {/* Heading Section */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 mb-6">
-            Lead Generation Through{' '}
-            <span className="text-[#085DA0]">AI Authority</span>
-          </h2>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            We combine proven lead generation tactics with cutting-edge AEO/GEO
-            strategy. While others chase clicks, we build the authority that
-            converts prospects into customers.
-          </p>
-        </div>
-
-        {/* Two Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
-          {/* Left Part - Key Points */}
-          <div className="space-y-8">
-            {keyPoints.map((point, index) => {
-              const Icon = point.icon;
-              return (
-                <div key={index} className="flex gap-4">
-                  {/* Icon */}
-                  <div className="flex-shrink-0">
-                    <div className="w-10 h-10 bg-[#085DA0] rounded-lg flex items-center justify-center">
-                      <Icon className="w-6 h-6 text-white" />
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <div className="flex-1">
-                    <h3 className="text-xl md:text-2xl font-bold text-black mb-3">
-                      {point.heading}
-                    </h3>
-                    <p className="text-gray-700 leading-relaxed">
-                      {point.description}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
+    <section className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Left Column */}
+          <div>
+            <span className="inline-block px-4 py-1 bg-[#085DA0]/10 text-[#085DA0] rounded-full text-sm font-medium mb-6">
+              Why Adam Silva Consulting
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Built for the<br />
+              <span className="text-[#085DA0]">Agent-Centric Web</span>
+            </h2>
+            <p className="text-lg text-gray-600 mb-6">
+              Traditional platforms hit a ceiling. They lack root-level control, transport flexibility, token efficiency, schema depth, and cryptographic infrastructure.
+            </p>
+            <p className="text-lg text-gray-600 mb-8">
+              We architect bespoke stacks that satisfy the technical requirements of UCP, ACP, and AP2—because that's what agents demand.
+            </p>
+            <Link
+              href="/about"
+              className="inline-flex items-center gap-2 text-[#085DA0] hover:text-[#0f6cbb] font-semibold transition-colors"
+            >
+              Learn About Our Approach
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
 
-          {/* Right Part - Metrics */}
-          <div className="bg-white rounded-3xl p-8 shadow-lg w-full">
-            <h2 className="text-2xl font-bold text-gray-900 mb-8">
-              The New Success Metrics
-            </h2>
-
-            <div className="space-y-6">
-              {metrics.map((metric, index) => (
-                <div
-                  key={index}
-                  className="flex flex-col md:flex-row items-center justify-between gap-4"
-                >
-                  {/* Label */}
-                  <span className="text-gray-600 font-normal text-base whitespace-nowrap">
-                    {metric.label}
-                  </span>
-
-                  {/* Progress Bar and Value Container */}
-                  <div className="flex items-center gap-3 flex-1 w-full md:max-w-xs">
-                    {/* Progress Bar Container */}
-                    <div className="flex-1 ml-20 bg-gray-200 rounded-full h-1 overflow-hidden min-w-[120px]">
-                      <div
-                        className="bg-[#085DA0] h-full rounded-full transition-all duration-1000 ease-out"
-                        style={{ width: `${metric.value}%` }}
-                      />
-                    </div>
-
-                    {/* Value */}
-                    <span className="text-[#085DA0] font-bold text-xl whitespace-nowrap">
-                      {metric.value}%
-                    </span>
-                  </div>
+          {/* Right Column */}
+          <div className="grid sm:grid-cols-2 gap-6">
+            {capabilities.map((item, index) => (
+              <div
+                key={index}
+                className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-all border border-gray-100"
+              >
+                <div className="w-12 h-12 bg-[#085DA0]/10 rounded-lg flex items-center justify-center mb-4">
+                  <item.icon className="w-6 h-6 text-[#085DA0]" />
                 </div>
-              ))}
-            </div>
+                <h3 className="font-semibold text-gray-900 mb-2">{item.title}</h3>
+                <p className="text-sm text-gray-600">{item.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
     </section>
   );
-};
-
-export default About;
+}

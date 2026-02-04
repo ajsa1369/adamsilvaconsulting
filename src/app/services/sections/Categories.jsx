@@ -1,87 +1,81 @@
-import { ChartColumn, Target, Zap } from 'lucide-react';
-import React from 'react';
+import { CheckCircle } from 'lucide-react';
 
-const Categories = () => {
-  const categories = [
+export default function Categories() {
+  const phases = [
     {
-      title: 'Foundation Services',
-      description:
-        'Technical infrastructure and content creation capabilities that form the bedrock of AI authority.',
-      points: [
-        'Technical SEO Architecture',
-        'AI Content Creation',
-        'Topical Authority Development',
-      ],
-      Icon: Target,
+      phase: '0',
+      name: 'Readiness Audit',
+      weeks: 'Weeks 1-2',
+      items: ['Current architecture assessment', 'Protocol gap analysis', 'Token efficiency audit', 'Schema depth review'],
     },
     {
-      title: 'Optimization Services',
-      description:
-        'Advanced strategies specifically designed for AI engine visibility and citation.',
-      points: [
-        'Answer Engine Optimization',
-        'Generative Engine Optimization',
-        'AI Marketing Automation',
-      ],
-      Icon: Zap,
+      phase: '1',
+      name: 'Foundation',
+      weeks: 'Weeks 3-6',
+      items: ['SPA+SSR migration', 'Heavy schema implementation', 'UCP manifest creation', 'Core Web Vitals optimization'],
     },
     {
-      title: 'Intelligence Services',
-      description:
-        'Data-driven insights and performance optimization for continuous improvement.',
-      points: [
-        'Real-time Analytics',
-        'Performance Intelligence',
-        'Predictive Modeling',
-      ],
-      Icon: ChartColumn,
+      phase: '2',
+      name: 'Protocol Integration',
+      weeks: 'Weeks 7-10',
+      items: ['UCP capability profiles', 'ACP checkout integration', 'AP2 mandate system', 'Multi-transport setup'],
+    },
+    {
+      phase: '3',
+      name: 'Certification',
+      weeks: 'Weeks 11-13',
+      items: ['Google Merchant Center', 'OpenAI conformance testing', 'Agent simulation testing', 'Performance validation'],
+    },
+    {
+      phase: '4',
+      name: 'Operations',
+      weeks: 'Weeks 14+',
+      items: ['Telemetry & monitoring', 'Mandate audit dashboards', 'Continuous optimization', 'Protocol updates'],
     },
   ];
 
   return (
-    <section className="mt-20 w-full flex items-center justify-center flex-col gap-10 px-4 sm:px-6 lg:px-8 py-10 bg-gray-50">
-      <h1 className="text-neutral-800 font-bold text-3xl md:text-4xl text-center">
-        Strategic Service Categories
-      </h1>
-      
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto w-full">
-        {categories.map((category, index) => (
-          <div
-            key={index}
-            className="flex flex-col p-8 bg-white border border-neutral-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
-          >
-            {/* Icon container with gradient background effect */}
-            <div className="w-16 h-16 flex items-center justify-center bg-blue-100 rounded-lg mb-6 "
-              style={{
-                background: 'linear-gradient(135deg, #e0f2fe 0%, #bfdbfe 100%)' // Subtle light blue gradient
-              }}
+    <section className="py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <span className="inline-block px-4 py-1 bg-[#085DA0]/10 text-[#085DA0] rounded-full text-sm font-medium mb-4">
+            Implementation Roadmap
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            12-16 Weeks to Protocol Compliance
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Structured phases from assessment through certification and ongoing operations.
+          </p>
+        </div>
+
+        <div className="space-y-6">
+          {phases.map((phase, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-xl p-6 border border-gray-200 flex flex-col md:flex-row gap-6"
             >
-              <category.Icon className="w-8 h-8 text-[#085DA0]" />
+              <div className="md:w-48 flex-shrink-0">
+                <span className="inline-block px-3 py-1 bg-[#085DA0] text-white text-sm font-bold rounded-full mb-2">
+                  Phase {phase.phase}
+                </span>
+                <h3 className="text-xl font-semibold text-gray-900">{phase.name}</h3>
+                <p className="text-sm text-[#085DA0] font-medium">{phase.weeks}</p>
+              </div>
+              <div className="flex-1">
+                <div className="grid sm:grid-cols-2 gap-3">
+                  {phase.items.map((item, i) => (
+                    <div key={i} className="flex items-center gap-2 text-gray-600">
+                      <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
-
-            {/* Title and Description */}
-            <h2 className="text-2xl font-bold text-neutral-800 mb-3">
-              {category.title}
-            </h2>
-            <p className="text-neutral-600 text-base mb-6">
-              {category.description}
-            </p>
-
-            {/* Focus Points List */}
-            <h3 className="text-lg font-semibold text-neutral-800 mb-3">Key Focus Areas:</h3>
-            <ul className="space-y-2 text-neutral-700 text-sm">
-              {category.points.map((point, pointIndex) => (
-                <li key={pointIndex} className="flex items-start">
-                  <span className="text-blue-500 mr-2">•</span> 
-                  {point.trim()}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
-};
-
-export default Categories;
+}
