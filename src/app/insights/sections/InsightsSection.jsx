@@ -1,56 +1,119 @@
 "use client"
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Calendar, Clock, ArrowRight, AlertTriangle, Target, Lightbulb, ShieldIcon, ChevronLeft, ChevronRight } from 'lucide-react';
 
+// Static blog data
+const staticBlogs = [
+  {
+    id: '1',
+    slug: 'google-ucp-is-live',
+    title: "Google's UCP is Live: What Merchants Need to Know Now",
+    excerpt: "The Universal Commerce Protocol is no longer theoretical. Google's January 2026 announcement marks the official transition to agentic commerce. Here's what you need to do today.",
+    category: 'Protocol Updates',
+    impact: 'CRITICAL',
+    createdAt: '2026-01-15',
+    readingTime: 8,
+  },
+  {
+    id: '2',
+    slug: 'chatgpt-instant-checkout',
+    title: "ChatGPT Instant Checkout: Inside OpenAI's ACP Implementation",
+    excerpt: "OpenAI's Instant Checkout feature powered by ACP is now live with Etsy and expanding to 1M+ Shopify merchants. Here's how it works.",
+    category: 'ACP',
+    impact: 'HIGH',
+    createdAt: '2026-01-12',
+    readingTime: 6,
+  },
+  {
+    id: '3',
+    slug: 'hydration-tax',
+    title: 'The Hydration Tax: Why Your JS Bundle is Costing You Agent Citations',
+    excerpt: "AI crawlers operate on token budgets. Heavy JavaScript bundles consume those tokens before agents reach your content. Here's the real cost.",
+    category: 'Technical',
+    impact: 'HIGH',
+    createdAt: '2026-01-08',
+    readingTime: 5,
+  },
+  {
+    id: '4',
+    slug: 'ap2-mandates-explained',
+    title: 'AP2 Mandates Explained: Cryptographic Proof for Agent Payments',
+    excerpt: "How do you prove a user authorized an AI agent to spend their money? AP2's mandate system provides the answer with verifiable credentials.",
+    category: 'AP2',
+    impact: 'MEDIUM',
+    createdAt: '2026-01-05',
+    readingTime: 7,
+  },
+  {
+    id: '5',
+    slug: 'organic-traffic-decline',
+    title: '50% Organic Traffic Decline: The Data Behind the Shift',
+    excerpt: "Gartner's projection is becoming reality. As AI answers queries directly, traditional website traffic is declining. Here's what the data shows.",
+    category: 'Market Analysis',
+    impact: 'CRITICAL',
+    createdAt: '2026-01-02',
+    readingTime: 4,
+  },
+  {
+    id: '6',
+    slug: 'schema-agents-use',
+    title: 'Schema Markup That Agents Actually Use',
+    excerpt: "Not all JSON-LD is created equal. Here's how to structure your schema for maximum agent comprehension and action enablement.",
+    category: 'Technical',
+    impact: 'HIGH',
+    createdAt: '2025-12-28',
+    readingTime: 10,
+  },
+  {
+    id: '7',
+    slug: 'legacy-platform-limitations',
+    title: "Why Shopify, Wix, and WordPress Can't Support UCP",
+    excerpt: "Root-level access, transport flexibility, TEE/DID infrastructure—legacy platforms lack the fundamentals required for protocol compliance.",
+    category: 'Platform Analysis',
+    impact: 'HIGH',
+    createdAt: '2025-12-22',
+    readingTime: 6,
+  },
+  {
+    id: '8',
+    slug: 'aeo-geo-metrics',
+    title: 'New Metrics for the Agent Web: From CTR to Citation Rate',
+    excerpt: "Click-through rate was built for humans. Here are the metrics that matter when AI agents mediate discovery and transactions.",
+    category: 'Strategy',
+    impact: 'MEDIUM',
+    createdAt: '2025-12-18',
+    readingTime: 5,
+  },
+  {
+    id: '9',
+    slug: 'spa-ssr-architecture-guide',
+    title: 'SPA + SSR: The Only Architecture That Works',
+    excerpt: "Why the combination of Single Page Application interactivity with Server-Side Rendering is the only way to satisfy both human users and AI agents.",
+    category: 'Technical',
+    impact: 'HIGH',
+    createdAt: '2025-12-15',
+    readingTime: 8,
+  },
+];
+
 export default function InsightsSection() {
   const router = useRouter();
-  const [blogs, setBlogs] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
   const [activeCategory, setActiveCategory] = useState("All Insights");
   const [currentPage, setCurrentPage] = useState(1);
   const blogsPerPage = 9;
 
-  // Fetch blogs from API
-  useEffect(() => {
-    const fetchBlogs = async () => {
-      const BASE_URL=process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000/api/blogs';
-      try {
-        setLoading(true);
-        setError(null);
-
-        const response = await fetch(
-          `${BASE_URL}`
-        );
-
-        if (!response.ok) {
-          throw new Error('Failed to fetch blogs');
-        }
-
-        const data = await response.json();
-        setBlogs(data.blogs || []);
-      } catch (err) {
-        setError(err.message);
-        console.error('Error fetching blogs:', err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchBlogs();
-  }, []);
+  const blogs = staticBlogs;
 
   // Define all possible categories
   const allCategories = [
-    "Strategic Analysis",
-    "Market Intelligence",
-    "Technical Implementation",
-    "Authority Building",
-    "Business Strategy",
-    "Technology",
-    "Security",
-    "Sustainability"
+    "Protocol Updates",
+    "ACP",
+    "AP2",
+    "Technical",
+    "Market Analysis",
+    "Platform Analysis",
+    "Strategy",
   ];
 
   // Get categories with their counts
@@ -65,22 +128,12 @@ export default function InsightsSection() {
       { name: "All Insights", count: blogs.length, active: activeCategory === "All Insights" }
     ];
 
-    // Add all predefined categories with their counts (0 if no blogs)
     allCategories.forEach(categoryName => {
-      categories.push({
-        name: categoryName,
-        count: categoryCounts[categoryName] || 0,
-        active: activeCategory === categoryName
-      });
-    });
-
-    // Add any additional categories from blogs that aren't in the predefined list
-    Object.entries(categoryCounts).forEach(([name, count]) => {
-      if (!allCategories.includes(name) && name !== 'Uncategorized') {
+      if (categoryCounts[categoryName]) {
         categories.push({
-          name,
-          count,
-          active: activeCategory === name
+          name: categoryName,
+          count: categoryCounts[categoryName],
+          active: activeCategory === categoryName
         });
       }
     });
@@ -103,11 +156,6 @@ export default function InsightsSection() {
   const indexOfFirstBlog = indexOfLastBlog - blogsPerPage;
   const currentBlogs = filteredBlogs.slice(indexOfFirstBlog, indexOfLastBlog);
 
-  // Reset to page 1 when category changes
-  useEffect(() => {
-    setCurrentPage(1);
-  }, [activeCategory]);
-
   const getImpactColor = (impact) => {
     switch(impact?.toUpperCase()) {
       case "CRITICAL": return "bg-red-50 text-red-600 border-red-200";
@@ -119,17 +167,18 @@ export default function InsightsSection() {
 
   const getTagIcon = (category) => {
     const tag = category?.toLowerCase() || '';
-    if (tag.includes('market') || tag.includes('intelligence')) return <AlertTriangle size={16} />;
+    if (tag.includes('market') || tag.includes('analysis')) return <AlertTriangle size={16} />;
     if (tag.includes('strategic') || tag.includes('strategy')) return <Target size={16} />;
-    if (tag.includes('technical') || tag.includes('implementation') || tag.includes('security')) return <ShieldIcon size={16} />;
-    if (tag.includes('authority') || tag.includes('building')) return <Lightbulb size={16} />;
+    if (tag.includes('technical') || tag.includes('platform')) return <ShieldIcon size={16} />;
+    if (tag.includes('protocol') || tag.includes('acp') || tag.includes('ap2')) return <Lightbulb size={16} />;
     return <Target size={16} />;
   };
 
   const formatDate = (dateString) => {
     return new Date(dateString).toLocaleDateString('en-US', {
       month: 'short',
-      day: 'numeric'
+      day: 'numeric',
+      year: 'numeric'
     });
   };
 
@@ -142,74 +191,22 @@ export default function InsightsSection() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Loading state
-  if (loading) {
-    return (
-      <div className="bg-gray-50 min-h-screen py-16">
-        <div className="max-w-7xl mx-auto px-6 py-16">
-          <div className="flex items-center justify-center min-h-[400px]">
-            <div className="text-center">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-              <p className="text-lg text-gray-600">Loading insights...</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  // Error state
-  if (error) {
-    return (
-      <div className="bg-gray-50 min-h-screen py-16">
-        <div className="max-w-7xl mx-auto px-6 py-16">
-          <div className="flex items-center justify-center min-h-[400px]">
-            <div className="text-center max-w-md">
-              <div className="bg-red-50 border border-red-200 rounded-lg p-6 mb-6">
-                <h2 className="text-xl font-bold text-red-800 mb-2">Error Loading Insights</h2>
-                <p className="text-red-600">{error}</p>
-              </div>
-              <button
-                onClick={() => window.location.reload()}
-                className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition"
-              >
-                Retry
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  // No blogs state
-  if (blogs.length === 0) {
-    return (
-      <div className="bg-gray-50 min-h-screen py-16">
-        <div className="max-w-7xl mx-auto px-6 py-16">
-          <div className="flex items-center justify-center min-h-[400px]">
-            <div className="text-center">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">No Insights Available</h2>
-              <p className="text-gray-600">Check back soon for new content!</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
+  const handleCategoryChange = (category) => {
+    setActiveCategory(category);
+    setCurrentPage(1);
+  };
 
   const categories = getCategoriesWithCounts();
 
   return (
     <div className="bg-gray-50 min-h-screen py-16">
-      {/* Insights Section */}
       <div className="max-w-7xl mx-auto px-6 py-16">
         {/* Category Filters */}
         <div className="flex flex-wrap max-w-6xl items-center justify-center mx-auto gap-3 mb-12">
           {categories.map((category) => (
             <button
               key={category.name}
-              onClick={() => setActiveCategory(category.name)}
+              onClick={() => handleCategoryChange(category.name)}
               className={`px-6 py-3 rounded-full text-md font-medium transition-all ${
                 activeCategory === category.name
                   ? 'bg-blue-600 text-white shadow-lg'
@@ -237,7 +234,7 @@ export default function InsightsSection() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 px-10 gap-6">
             {currentBlogs.map((blog) => (
               <div
-                key={blog._id || blog.id}
+                key={blog.id}
                 onClick={() => handleBlogClick(blog.slug)}
                 className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col cursor-pointer group"
               >
@@ -254,23 +251,12 @@ export default function InsightsSection() {
                   )}
                 </div>
 
-                {/* Featured Image (if available) */}
-                {blog.images && blog.images.length > 0 && (
-                  <div className="mb-4 rounded-lg overflow-hidden">
-                    <img
-                      src={blog.images[0].url}
-                      alt={blog.title}
-                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                )}
-
                 {/* Heading */}
                 <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight group-hover:text-blue-600 transition-colors">
                   {blog.title}
                 </h3>
 
-                {/* Excerpt/Subheading */}
+                {/* Excerpt */}
                 {blog.excerpt && (
                   <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow line-clamp-3">
                     {blog.excerpt}
@@ -314,11 +300,9 @@ export default function InsightsSection() {
               <ChevronLeft size={20} />
             </button>
 
-            {/* Page Numbers */}
             <div className="flex gap-2">
               {[...Array(totalPages)].map((_, index) => {
                 const pageNumber = index + 1;
-                // Show first page, last page, current page, and pages around current
                 if (
                   pageNumber === 1 ||
                   pageNumber === totalPages ||
