@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { Tag, Calendar, Clock, ArrowRight, AlertTriangle } from 'lucide-react';
 
 export default function FeaturedAnalysis() {
@@ -44,11 +45,14 @@ export default function FeaturedAnalysis() {
               </div>
             </div>
 
-            {/* CTA Button */}
-            <button className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl   font-semibold transition-all flex items-center gap-2 group shadow-xl shadow-blue-500/30 hover:shadow-blue-500/50">
+            {/* CTA Button - Now with Link */}
+            <Link 
+              href="/insights/the-ai-authority-imperative-gartners-50-traffic-decline-prediction"
+              className="inline-flex px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold transition-all items-center gap-2 group shadow-xl shadow-blue-500/30 hover:shadow-blue-500/50"
+            >
               Read Critical Analysis
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-            </button>
+            </Link>
           </div>
 
           {/* Right Alert Box (1/3 Width) */}
