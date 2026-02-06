@@ -50,8 +50,8 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
-              <h3 className="text-2xl font-bold">Ready for AI-Powered Marketing?</h3>
-              <p className="text-gray-400 mt-2">From lead generation to authority building—transform your marketing with AI.</p>
+              <h3 className="text-2xl font-bold">Ready for Agentic Commerce?</h3>
+              <p className="text-gray-400 mt-2">Global infrastructure for the agent-centric web—from lead generation to authority architecture.</p>
             </div>
             <Link
               href="/contact"
@@ -71,16 +71,16 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <Link href="/">
               <Image
-                src="/assets/logo-white.png"
-                alt="Adam Silva Consulting"
+                src="/assets/logo-clear.png"
+                alt="Adam Silva Consulting - Global Infrastructure for Agentic Commerce"
                 width={150}
                 height={50}
                 className="h-12 w-auto mb-4"
               />
             </Link>
-            <p className="text-sm font-semibold text-[#0f6cbb] mb-2">Integrated Digital Intelligence</p>
+            <p className="text-sm font-semibold text-[#0f6cbb] mb-2">Global Infrastructure for Agentic Commerce</p>
             <p className="text-gray-400 text-sm mb-6 max-w-sm">
-              AI-powered marketing services for the agentic commerce era. Lead generation, authority building, and intelligent automation.
+              Enterprise architecture for UCP, ACP, and AP2 protocols. AI-powered marketing infrastructure for the agentic commerce era.
             </p>
             <div className="space-y-3">
               <a href="mailto:info@adamsilvaconsulting.com" className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm">
