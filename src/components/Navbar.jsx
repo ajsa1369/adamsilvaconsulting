@@ -107,10 +107,11 @@ export default function Navbar() {
             <Link href="/">
               <Image
                 src="/assets/logo.png"
-                alt="Adam Silva Consulting"
+                alt="Adam Silva Consulting - Global Infrastructure for Agentic Commerce"
                 width={130}
                 height={130}
                 className="w-auto"
+                priority
               />
             </Link>
           </div>
@@ -139,7 +140,7 @@ export default function Navbar() {
                 <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[800px] bg-white shadow-xl rounded-lg border border-gray-200 z-50">
                   <div className="p-6">
                     <div className="flex items-center justify-between mb-4 pb-3 border-b border-gray-100">
-                      <span className="text-sm font-semibold text-[#085DA0] uppercase tracking-wider">AI-Powered Marketing Services</span>
+                      <span className="text-sm font-semibold text-[#085DA0] uppercase tracking-wider">Agentic Commerce Services</span>
                       <Link href="/services" className="text-sm text-[#085DA0] hover:underline font-medium">View All →</Link>
                     </div>
                     <div className="grid grid-cols-2 gap-6">
